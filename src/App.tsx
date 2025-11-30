@@ -28,6 +28,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/gallery" element={<Gallery />} />
           <Route path="/products/medical-equipment" element={<MedicalEquipment />} />
           <Route path="/products/microbiology-biotechnology" element={<MicrobiologyBiotechnology />} />
           <Route path="/products/glassware" element={<Glassware />} />
