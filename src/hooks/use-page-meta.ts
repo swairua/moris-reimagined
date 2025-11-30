@@ -1,11 +1,21 @@
 import { useEffect } from "react";
 
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
 interface PageMetaProps {
   title: string;
   description: string;
   keywords?: string;
   image?: string;
-  type?: "website" | "article";
+  type?: "website" | "article" | "product";
+  canonical?: string;
+  breadcrumbs?: BreadcrumbItem[];
+  author?: string;
+  publishedDate?: string;
+  modifiedDate?: string;
 }
 
 export const usePageMeta = ({
@@ -14,6 +24,11 @@ export const usePageMeta = ({
   keywords,
   image,
   type = "website",
+  canonical,
+  breadcrumbs,
+  author,
+  publishedDate,
+  modifiedDate,
 }: PageMetaProps) => {
   useEffect(() => {
     // Set document title
