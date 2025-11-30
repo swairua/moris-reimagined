@@ -99,33 +99,41 @@ export const Navigation = () => {
             </button>
 
             {/* Products Dropdown */}
-            <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium focus:outline-none">
-                Biomedical Products
-                <ChevronDown className="h-4 w-4" />
-              </DropdownMenuTrigger>
-              <DropdownMenuContent className="w-screen max-w-2xl bg-background border-border z-[100] p-6">
-                <div className="grid grid-cols-3 gap-4">
-                  {productCategories.map((category) => {
-                    const IconComponent = category.icon;
-                    return (
-                      <button
-                        key={category.path}
-                        onClick={() => navigate(category.path)}
-                        className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-accent transition-all duration-200 group cursor-pointer text-center"
-                      >
-                        <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
-                          <IconComponent className="h-6 w-6 text-primary" />
-                        </div>
-                        <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors line-clamp-2">
-                          {category.name}
-                        </span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </DropdownMenuContent>
-            </DropdownMenu>
+            <div
+              onMouseEnter={() => setIsProductsDropdownOpen(true)}
+              onMouseLeave={() => setIsProductsDropdownOpen(false)}
+            >
+              <DropdownMenu open={isProductsDropdownOpen} onOpenChange={setIsProductsDropdownOpen}>
+                <DropdownMenuTrigger className="flex items-center gap-1 text-foreground hover:text-primary transition-colors font-medium focus:outline-none">
+                  Biomedical Products
+                  <ChevronDown className={`h-4 w-4 transition-transform duration-300 ${isProductsDropdownOpen ? 'rotate-180' : ''}`} />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-screen max-w-2xl bg-background border-border z-[100] p-6">
+                  <div className="grid grid-cols-3 gap-4">
+                    {productCategories.map((category) => {
+                      const IconComponent = category.icon;
+                      return (
+                        <button
+                          key={category.path}
+                          onClick={() => {
+                            navigate(category.path);
+                            setIsProductsDropdownOpen(false);
+                          }}
+                          className="flex flex-col items-center gap-3 p-4 rounded-lg hover:bg-accent transition-all duration-200 group cursor-pointer text-center"
+                        >
+                          <div className="flex items-center justify-center w-12 h-12 rounded-lg bg-primary/10 group-hover:bg-primary/20 transition-colors">
+                            <IconComponent className="h-6 w-6 text-primary" />
+                          </div>
+                          <span className="text-sm font-medium text-foreground group-hover:text-primary transition-colors line-clamp-2">
+                            {category.name}
+                          </span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
 
             <button
               onClick={() => navigate("/products/automobile-supplies")}
