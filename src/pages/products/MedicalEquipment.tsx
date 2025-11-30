@@ -184,7 +184,7 @@ const MedicalEquipment = () => {
         {products.map((product, index) => (
           <Card
             key={index}
-            className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
+            className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col ${
               product.image ? "overflow-hidden" : "p-6"
             }`}
           >
@@ -197,7 +197,7 @@ const MedicalEquipment = () => {
                 />
               </div>
             )}
-            <div className={product.image ? "p-6 flex flex-col h-full" : "p-6 flex flex-col h-full"}>
+            <div className="p-6 flex flex-col flex-1">
               <h3 className="text-xl font-display font-semibold text-foreground mb-2">
                 {product.name}
               </h3>

@@ -99,7 +99,7 @@ const LabEquipment = () => {
         {products.map((product, index) => (
           <Card
             key={index}
-            className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full`}
+            className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col`}
           >
             {product.image && (
               <div className="relative w-full h-48 overflow-hidden bg-muted">
@@ -110,7 +110,7 @@ const LabEquipment = () => {
                 />
               </div>
             )}
-            <div className="p-6 flex-1 flex flex-col">
+            <div className="p-6 flex flex-col flex-1">
               <h3 className="text-xl font-display font-semibold text-foreground mb-2">
                 {product.name}
               </h3>
