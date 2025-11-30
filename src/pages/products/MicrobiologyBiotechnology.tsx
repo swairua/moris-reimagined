@@ -218,7 +218,9 @@ const MicrobiologyBiotechnology = () => {
               {items.map((product, index) => (
                 <Card
                   key={index}
-                  className="p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                  className={`hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col ${
+                    product.image ? "overflow-hidden" : "p-4"
+                  }`}
                 >
                   <h3 className="text-lg font-semibold text-foreground mb-2">
                     {product.name}
