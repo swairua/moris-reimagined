@@ -1,6 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useState } from "react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const galleryImages = [
   {
@@ -31,6 +32,18 @@ const galleryImages = [
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
+
+  usePageMeta({
+    title: "Laboratory Gallery | Moris Enterprises Kenya",
+    description: "Explore our comprehensive gallery showcasing premium laboratory chemicals, equipment, and solutions. View high-quality images of our products and facilities.",
+    keywords: "laboratory gallery, chemical products, laboratory equipment, laboratory images, biomedical solutions, Kenya",
+    type: "website",
+    canonical: "https://morisenterprises.com/gallery",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Gallery", url: "/gallery" },
+    ],
+  });
 
   return (
     <div className="min-h-screen flex flex-col">
