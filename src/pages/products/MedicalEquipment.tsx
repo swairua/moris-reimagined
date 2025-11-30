@@ -197,7 +197,7 @@ const MedicalEquipment = () => {
                 />
               </div>
             )}
-            <div className={product.image ? "p-6 flex flex-col h-full" : "p-6 flex flex-col h-full"}>
+            <div className="p-6 flex flex-col flex-1">
               <h3 className="text-xl font-display font-semibold text-foreground mb-2">
                 {product.name}
               </h3>
