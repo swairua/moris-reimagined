@@ -4,7 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { MapPin, Mail, Phone, Clock, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createWhatsAppMessage, openWhatsApp, getWhatsAppNumber } from "@/lib/whatsapp";
 
 export const Contact = () => {
@@ -15,6 +15,43 @@ export const Contact = () => {
     phone: "",
     message: ""
   });
+
+  // Add contact schema on component mount
+  useEffect(() => {
+    const contactSchema = {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      name: "Moris Enterprises",
+      url: "https://morisenterprises.com",
+      contactPoint: {
+        "@type": "ContactPoint",
+        contactType: "Customer Support",
+        telephone: getWhatsAppNumber(),
+        email: "info@morisentreprise.com",
+      },
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "Juja road",
+        addressLocality: "Nairobi",
+        addressCountry: "KE",
+      },
+    };
+
+    let contactScript = document.querySelector('script[data-contact-schema]');
+    if (contactScript) {
+      contactScript.textContent = JSON.stringify(contactSchema);
+    } else {
+      contactScript = document.createElement("script");
+      contactScript.type = "application/ld+json";
+      contactScript.setAttribute("data-contact-schema", "true");
+      contactScript.textContent = JSON.stringify(contactSchema);
+      document.head.appendChild(contactScript);
+    }
+
+    return () => {
+      // Cleanup is handled by browser
+    };
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
