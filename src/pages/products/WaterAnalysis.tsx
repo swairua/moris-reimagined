@@ -4,83 +4,113 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
 
-const products = [
-  {
-    name: "Kemio Analyzer",
-    description: "Advanced water disinfection analyzer for rapid testing",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2Fe9262b3c0b304adda46e7cba438946aa?format=webp&width=800"
-  },
-  {
-    name: "Palintest Photometer 7500",
-    description: "Professional photometer for multi-parameter water analysis",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2F028cb3ebfdf7495d9fbe3661838c78ac?format=webp&width=800"
-  },
-  {
-    name: "pH and Water Quality Probe",
-    description: "Handheld probe meter for accurate pH and temperature measurement",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2F5af16a6886c2451facd55788fcf1ca30?format=webp&width=800"
-  },
-  {
-    name: "Conductivity Meter",
-    description: "Portable meter for measuring water conductivity and salinity",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2F09f3766d8c6d4c8aae0a964edbc49056?format=webp&width=800"
-  },
-  {
-    name: "Portable Water Testing Meter",
-    description: "Handheld meter for on-site water quality testing",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2F560a42f0d4d84eb5b1885f44408fd557?format=webp&width=800"
-  },
-  {
-    name: "Digital pH Meter",
-    description: "Precision pH measurement instrument with digital display",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2F39226670924b4c558769b05e4b6fca83?format=webp&width=800"
-  },
-  {
-    name: "Water Testing Kit Reagents",
-    description: "Complete set of reagents for comprehensive water testing",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2F38b6d050ded6479297134ee9e75bcf43?format=webp&width=800"
-  },
-  {
-    name: "Milwaukee Equipment",
-    description: "Professional water analysis equipment by Milwaukee",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2F456bfa1942604bb4a5f9700472082050?format=webp&width=800"
-  },
-  {
-    name: "Lovibond Tintometer",
-    description: "Lovibond color comparison system for water testing",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2F624752a65683445d8205bb42c5dc9cc0?format=webp&width=800"
-  },
-  {
-    name: "Delagua Water Testing Kits",
-    description: "Delagua comprehensive water quality testing kits",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2Fdd86e04e4c6449558cd19a9b2a61b50a?format=webp&width=800"
-  },
-  {
-    name: "Hach Equipment",
-    description: "Hach water testing and analytical instruments",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2Fa10e70dcb9ca44e3ace4a17d746de985?format=webp&width=800"
-  },
-  {
-    name: "Palintest Products",
-    description: "Palintest full range of water testing solutions",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2Fae4068e7774b4554bf1362d4c5f4efe8?format=webp&width=800"
-  },
-  {
-    name: "Hanna Equipment",
-    description: "Hanna high-precision water quality instruments",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2F608e0cf7ff65415ebc5a48d1714fef41?format=webp&width=800"
-  },
-  {
-    name: "Dissolved Oxygen Meters",
-    description: "Professional DO meter for dissolved oxygen measurement",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2Ff050915400c4405994e7c461d8a26949?format=webp&width=800"
-  },
-  {
-    name: "Water Waste and Boiler Reagents",
-    description: "Specialized reagents for waste water and boiler treatment",
-    image: "https://cdn.builder.io/api/v1/image/assets%2F0fd8d9ea35ed431fafa410b8025ca861%2F6daf7faceb05464fb8bee3ac571ae57d?format=webp&width=800"
-  },
-];
+const productCategories = {
+  "Palintest Photometers": [
+    "Lumiso Expert Photometer (Water Testing & Analysis)",
+    "Lumiso Pooltest Expert",
+    "Lumiso Ammonia",
+    "Lumiso Pooltest 9",
+    "Lumiso Chlorine",
+    "Lumiso Pooltest 3",
+    "Lumiso Chlorine Dioxide",
+    "Lumiso Pooltest 6",
+  ],
+  "Palintest Test Tablets & Reagents": [
+    "AP188 - Alkalinity (0-500 mg/L)",
+    "AP166 - Ammonia Tablets",
+    "AP060 - Calcium Hardness (0-500 mg/L)",
+    "AP252 - Chloride (0-500 mg/L)",
+    "AP268 - Chlorine HR (0-250 mg/L)",
+    "AP162 - Chlorine F, C & T Liquid (0-5 mg/L)",
+    "AP031 - Chlorine Free (0-5 mg/L)",
+    "AP011 - Chlorine Free & Total (0-10 mg/L)",
+    "AP033 - Chlorine Free XF (0-10 mg/L)",
+    "AP013 - Chlorine Total (0-5 mg/L)",
+    "AP041 - Chromium (VI) (0-1 mg/L)",
+    "AP295 - Colour (10-500 mg/L)",
+    "PM269 - Copper Free (0-5 mg/L)",
+    "AP187 - Copper Free and Total (0-5 mg/L)",
+    "AP186 - Cyanuric Acid (0-200 mg/L)",
+    "AP179 - Fluoride (0-1.5 mg/L)",
+    "AP254L - Hardness Total (0-300 mg/L)",
+    "AP105 - Hydrogen Peroxide HR (0-100 mg/L)",
+    "AP104 - Iron HR (0-10 mg/L)",
+    "AP156 - Iron LR (0-1 mg/L)",
+    "AP155 - Iron MR (0-5 mg/L)",
+    "AP292 - Magnesium (0-50 mg/L)",
+    "AP193 - Manganese HR (0-5 mg/L)",
+    "AP174 - Manganese LR (0-0.03 mg/L)",
+    "AP173L - Nickel (0-10 mg/L)",
+    "AP284 - Nitrate (0-1 mg/L)",
+    "AP109 - Nitrite (0-1500 mg/L)",
+    "AP260 - Ozone (0-3 mg/L)",
+    "AP056 - Phosphate (0-12 mg/L)",
+    "AP177 - pH-Phenol Red (6.5-8.4)",
+    "AP130 - Potassium (0-12 mg/L)",
+  ],
+  "Palintest Tube Tests": [
+    "PL400 - Ammonia/100N Nessler (0-100 mg/L)",
+    "PL425 - Ammonia/50N Nessler (0-50 mg/L)",
+    "PL424 - Bromine Total (0-10 mg/L)",
+    "PL453, PL463, PL468 - COD/150 (0-150 mg/L)",
+    "PL450, PL460, PL461 - COD/2000 (0-2000 mg/L)",
+    "PL454, PL464, PL465 - COD/20000 (0-20000 mg/L)",
+    "PL456, PL466, PL467 - COD/400 (0-400 mg/L)",
+    "PL452, PL462 - COD Mn (0-10 mg/L)",
+    "PL408 - (Various Applications)",
+  ],
+  "Palintest Microbiological Testing": [
+    "Wagtech Potatech+",
+    "Wagtech Potalab+",
+    "Wagtech Potakit",
+    "Wagtech Potacheck",
+    "Wagtech Potatest Classic",
+  ],
+  "Portable Water Quality Meters": [
+    "Portable Colorimeter",
+    "Portable DO Meter",
+    "Bench Top pH Meter",
+    "Portable pH Meter",
+    "Pen Type pH Meter",
+    "Bench Top Conductivity Meter",
+    "Pen Type Conductivity Meter",
+    "Pen Type TDS Meter",
+    "Pen Type ORP Meter",
+    "Salinity Meter",
+    "3 in 1 Water Tester (pH/TDS/Temp)",
+    "5 in 1 Meter (SALT/EC/TDS/S.G./TEMP)",
+    "Portable pH Meter 7 in 1 Smart",
+    "2 In 1 Water Quality Meter (CL/Temp)",
+    "4 In 1 Water Meter (CL/ORP/H2/TEMP)",
+    "5 in 1 Water Quality Meter (PH/CL/ORP/H2/TEMP)",
+  ],
+  "Laboratory Equipment": [
+    "COD Reactor",
+    "COD Analyzer",
+    "Turbidity Meter",
+  ],
+  "Electrodes & Sensors": [
+    "pH Electrode",
+    "Conductivity Electrode",
+    "ORP Electrode",
+    "DO Electrode",
+  ],
+  "HACH Instruments": [
+    "HACH DR3900 Laboratory VIS Spectrophotometer",
+    "HACH DR6000 UV Visible Spectrophotometer",
+    "HACH DR1900 Portable Spectrophotometer",
+    "HACH DR1010 COD Rapid Determination Instrument",
+    "HACH HT200S COD High Temperature Dissolver",
+    "HACH DRB200 Heating Digester",
+    "HACH DR300 Chlorine Dioxide Pocket Colorimeter",
+    "HACH DR300 Pocket Ozone Colorimeter",
+  ],
+  "Other Brands": [
+    "Milwaukee Equipment",
+    "Lovibond Water Testing Equipment",
+    "Lohand Water Analysis Tools",
+  ],
+};
 
 const openWhatsApp = (productName: string) => {
   const phoneNumber = "254733137332";
@@ -92,9 +122,9 @@ const openWhatsApp = (productName: string) => {
 
 const WaterAnalysis = () => {
   usePageMeta({
-    title: "Water Testing Equipment & Analysis Kits | Water Quality Solutions Kenya",
-    description: "Professional water testing equipment, water analysis kits, and reagents for water quality testing. Master distributor of Milwaukee, Lovibond, Hach, and Palintest products in Kenya.",
-    keywords: "water testing, water analysis, water quality equipment, testing kits, reagents, water treatment, analysis solutions, Kenya",
+    title: "Water Testing Equipment & Palintest | Water Quality Analysis Kenya",
+    description: "Official distributor of Palintest water analysis equipment, HACH instruments, and comprehensive water testing solutions including photometers, reagents, meters, and microbiological kits.",
+    keywords: "water testing, Palintest, HACH, water quality equipment, water analysis, photometer, COD analyzer, turbidity meter, Kenya",
     type: "article",
     canonical: "https://morisenterprises.com/products/water-analysis",
     breadcrumbs: [
@@ -106,82 +136,89 @@ const WaterAnalysis = () => {
 
   return (
     <ProductPageLayout
-      title="Water Analysis Instruments and Water Treatment"
-      description="Master distributor of leading water testing equipment brands including Milwaukee, Lovibond, Delagua, Hach, Palintest, and Hanna. Complete solutions for water quality analysis and treatment."
+      title="Water Analysis &amp; Testing Equipment"
+      description="Comprehensive water testing and analysis solutions featuring Palintest photometers, HACH instruments, portable meters, and professional-grade equipment for drinking water, wastewater, and industrial applications."
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product, index) => (
-          <Card
-            key={index}
-            className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
-          >
-            {product.image && (
-              <div className="w-full h-48 bg-muted overflow-hidden flex items-center justify-center">
-                <img 
-                  src={product.image} 
-                  alt={product.name}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-            )}
-            <div className="p-6 flex-1 flex flex-col">
-              <h3 className="text-xl font-display font-semibold text-foreground mb-2">
-                {product.name}
-              </h3>
-              <p className="text-muted-foreground flex-1">
-                {product.description || "Professional water analysis instruments and treatment solutions."}
-              </p>
-              <Button
-                onClick={() => openWhatsApp(product.name)}
-                className="w-full mt-4 bg-green-500 hover:bg-green-600 text-white font-medium"
-              >
-                <MessageCircle className="mr-2 h-4 w-4" />
-                Request Quotation via WhatsApp
-              </Button>
+      {/* Product Categories */}
+      <div className="space-y-12">
+        {Object.entries(productCategories).map(([category, items]) => (
+          <div key={category}>
+            <h2 className="text-3xl font-display font-bold text-foreground mb-6">
+              {category}
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {items.map((product, index) => (
+                <Card
+                  key={index}
+                  className="p-4 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 flex flex-col"
+                >
+                  <h3 className="text-lg font-semibold text-foreground mb-2">
+                    {product}
+                  </h3>
+                  <p className="text-sm text-muted-foreground flex-1">
+                    Professional water testing and quality analysis equipment.
+                  </p>
+                  <Button
+                    onClick={() => openWhatsApp(product)}
+                    className="w-full mt-3 bg-green-500 hover:bg-green-600 text-white font-medium text-sm"
+                  >
+                    <MessageCircle className="mr-2 h-4 w-4" />
+                    Quote via WhatsApp
+                  </Button>
+                </Card>
+              ))}
             </div>
-          </Card>
+          </div>
         ))}
       </div>
 
-      <div className="mt-16 prose prose-lg max-w-none bg-secondary/50 p-8 rounded-lg">
+      {/* Detailed Description */}
+      <div className="mt-16 prose prose-lg max-w-none">
         <h2 className="text-3xl font-display font-bold text-foreground mb-4">
-          Comprehensive Water Analysis Solutions
+          Professional Water Analysis &amp; Testing Solutions
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-4">
-          We supply water testing kits, water testing kit reagents, water waste and boiler reagents. 
-          As a Master Distributor of Milwaukee Equipment, Lovibond Tintometer, Delagua water Testing kits, 
-          Hach, Palintest, and Hanna Equipment, we provide comprehensive solutions for all types of water 
-          analysis and treatment requirements across various industries.
+          As authorized distributors of Palintest UK and HACH instruments, we supply the most comprehensive range of water testing and analysis equipment in Kenya. Our solutions serve drinking water utilities, wastewater treatment facilities, industrial processes, and environmental monitoring applications.
         </p>
-
+        
         <h3 className="text-2xl font-display font-bold text-foreground mt-6 mb-3">
-          Our Water Analysis Services:
+          Why Choose Our Water Analysis Products:
         </h3>
         <ul className="text-muted-foreground space-y-2">
-          <li className="flex items-start">
-            <span className="text-primary mr-3">✓</span>
-            <span>pH and acidity measurement</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary mr-3">✓</span>
-            <span>Dissolved oxygen analysis</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary mr-3">✓</span>
-            <span>Conductivity and salinity testing</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary mr-3">✓</span>
-            <span>Multi-parameter water analysis</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary mr-3">✓</span>
-            <span>Boiler and waste water treatment</span>
-          </li>
-          <li className="flex items-start">
-            <span className="text-primary mr-3">✓</span>
-            <span>Color and turbidity assessment</span>
-          </li>
+          <li>✓ Official distributor of Palintest UK equipment and reagents</li>
+          <li>✓ HACH laboratory spectrophotometers and analyzers</li>
+          <li>✓ 200+ test parameters available</li>
+          <li>✓ Rapid results (1-10 minutes for most tests)</li>
+          <li>✓ Compliant with international water quality standards</li>
+          <li>✓ Full technical support and training available</li>
+        </ul>
+
+        <h3 className="text-2xl font-display font-bold text-foreground mt-6 mb-3">
+          Application Areas:
+        </h3>
+        <ul className="text-muted-foreground space-y-2">
+          <li>Drinking water quality assurance and compliance</li>
+          <li>Wastewater and effluent testing</li>
+          <li>Industrial process water monitoring</li>
+          <li>Swimming pool and spa water management</li>
+          <li>Environmental and surface water testing</li>
+          <li>Food and beverage industry QC</li>
+          <li>Pharmaceutical manufacturing</li>
+          <li>Laboratory research and analysis</li>
+        </li>
+
+        <h3 className="text-2xl font-display font-bold text-foreground mt-6 mb-3">
+          Test Parameters Include:
+        </h3>
+        <ul className="text-muted-foreground space-y-2">
+          <li>pH, Temperature, Conductivity, TDS</li>
+          <li>Chlorine (Free, Total, Combined)</li>
+          <li>Alkalinity, Hardness, Calcium, Magnesium</li>
+          <li>Ammonia, Nitrate, Nitrite, Phosphate</li>
+          <li>Iron, Manganese, Copper, Chromium</li>
+          <li>Fluoride, Chloride, Cyanide</li>
+          <li>COD, BOD, Turbidity</li>
+          <li>Coliform bacteria and pathogens</li>
         </ul>
       </div>
     </ProductPageLayout>
