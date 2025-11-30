@@ -99,7 +99,7 @@ const LabEquipment = () => {
         {products.map((product, index) => (
           <Card
             key={index}
-            className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col h-full`}
+            className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden flex flex-col`}
           >
             {product.image && (
               <div className="relative w-full h-48 overflow-hidden bg-muted">
