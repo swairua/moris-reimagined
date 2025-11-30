@@ -197,13 +197,20 @@ const MedicalEquipment = () => {
                 />
               </div>
             )}
-            <div className={product.image ? "p-6" : ""}>
+            <div className={product.image ? "p-6 flex flex-col h-full" : "p-6 flex flex-col h-full"}>
               <h3 className="text-xl font-display font-semibold text-foreground mb-2">
                 {product.name}
               </h3>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground flex-1">
                 Professional-grade medical equipment for accurate diagnostics and analysis.
               </p>
+              <Button
+                onClick={() => openWhatsApp(product.name)}
+                className="w-full mt-4 bg-green-500 hover:bg-green-600 text-white font-medium"
+              >
+                <MessageCircle className="mr-2 h-4 w-4" />
+                Request Quotation via WhatsApp
+              </Button>
             </div>
           </Card>
         ))}
