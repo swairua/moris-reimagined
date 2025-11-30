@@ -2,6 +2,7 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const products = [
   {
@@ -75,6 +76,19 @@ const openWhatsApp = (productName: string) => {
 };
 
 const WasteWaterFiltration = () => {
+  usePageMeta({
+    title: "Wastewater & Pool Filtration Systems | Water Treatment Solutions Kenya",
+    description: "Professional wastewater filtration, pool filtration, and water treatment systems. Complete water quality solutions for industrial, municipal, and residential applications in Kenya.",
+    keywords: "wastewater filtration, pool filtration, water treatment, filtration systems, water quality, filtration equipment, Kenya",
+    type: "article",
+    canonical: "https://morisenterprises.com/products/waste-water-filtration",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Products", url: "/#services" },
+      { name: "Wastewater Filtration", url: "/products/waste-water-filtration" },
+    ],
+  });
+
   return (
     <ProductPageLayout
       title="Waste Water, Pool and Spa Filtration"

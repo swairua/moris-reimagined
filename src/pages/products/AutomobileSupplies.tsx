@@ -2,6 +2,7 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const products = [
   {
@@ -50,6 +51,19 @@ const openWhatsApp = (productName: string) => {
 };
 
 const AutomobileSupplies = () => {
+  usePageMeta({
+    title: "Automobile Supplies & Parts | Professional Auto Components Kenya",
+    description: "High-quality automobile supplies and suspension components including coil springs, professional-grade parts for vehicle maintenance and repair in Kenya.",
+    keywords: "automobile supplies, auto parts, suspension coils, springs, vehicle components, auto repair, Kenya",
+    type: "article",
+    canonical: "https://morisenterprises.com/products/automobile-supplies",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Products", url: "/#services" },
+      { name: "Automobile Supplies", url: "/products/automobile-supplies" },
+    ],
+  });
+
   return (
     <ProductPageLayout
       title="Automobile Supplies"

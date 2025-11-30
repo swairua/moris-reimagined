@@ -2,6 +2,7 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const products = [
   {
@@ -90,6 +91,19 @@ const openWhatsApp = (productName: string) => {
 };
 
 const LabEquipment = () => {
+  usePageMeta({
+    title: "Laboratory Equipment & Filtration Systems | Industrial Water Treatment Kenya",
+    description: "Advanced laboratory equipment including water filtration systems, deionized water systems, UV sterilizers, and water quality meters. Complete lab solutions for research and quality control.",
+    keywords: "laboratory equipment, water filtration, deionized water, UV sterilizers, water quality, lab instruments, Kenya",
+    type: "article",
+    canonical: "https://morisenterprises.com/products/lab-equipment",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Products", url: "/#services" },
+      { name: "Lab Equipment", url: "/products/lab-equipment" },
+    ],
+  });
+
   return (
     <ProductPageLayout
       title="Lab Equipment & TVET Systems"

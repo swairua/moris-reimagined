@@ -2,6 +2,7 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const products = [
   {
@@ -59,6 +60,19 @@ const openWhatsApp = (productName: string) => {
 };
 
 const PalintestKits = () => {
+  usePageMeta({
+    title: "Palintest Water Testing Kits & Photometers | Water Quality Analysis Kenya",
+    description: "Official distributor of Palintest water testing kits and photometers for rapid water quality analysis. Professional-grade testing solutions for water treatment and monitoring in Kenya.",
+    keywords: "Palintest, water testing kits, photometers, water quality, water analysis, testing equipment, Kenya",
+    type: "article",
+    canonical: "https://morisenterprises.com/products/palintest-kits",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Products", url: "/#services" },
+      { name: "Palintest Kits", url: "/products/palintest-kits" },
+    ],
+  });
+
   return (
     <ProductPageLayout
       title="Palintest Kits"
