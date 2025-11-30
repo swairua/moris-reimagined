@@ -2,6 +2,7 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
+import { usePageMeta } from "@/hooks/use-page-meta";
 
 const products = [
   {
@@ -55,6 +56,19 @@ const openWhatsApp = (productName: string) => {
 };
 
 const Glassware = () => {
+  usePageMeta({
+    title: "Laboratory Glassware | Borosilicate Glass Beakers & Equipment Kenya",
+    description: "Premium borosilicate laboratory glassware including beakers, flasks, pipettes, and test tubes. Heat-resistant, chemically inert glass for reliable lab operations. Free quotations.",
+    keywords: "laboratory glassware, borosilicate glass, beakers, flasks, volumetric flasks, pipettes, test tubes, laboratory equipment, Kenya",
+    type: "article",
+    canonical: "https://morisenterprises.com/products/glassware",
+    breadcrumbs: [
+      { name: "Home", url: "/" },
+      { name: "Products", url: "/#services" },
+      { name: "Glassware", url: "/products/glassware" },
+    ],
+  });
+
   return (
     <ProductPageLayout
       title="Glassware"
