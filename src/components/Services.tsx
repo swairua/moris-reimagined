@@ -97,6 +97,8 @@ const services = [
 ];
 
 export const Services = () => {
+  const navigate = useNavigate();
+
   return (
     <section id="services" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
@@ -115,7 +117,8 @@ export const Services = () => {
             return (
               <Card
                 key={index}
-                className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card border-border"
+                onClick={() => navigate(service.route)}
+                className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card border-border cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="flex items-start gap-4">
