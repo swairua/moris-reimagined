@@ -3,10 +3,9 @@ import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, HeartPulse, Microscope, Beaker, FlaskConical, Droplet, TestTube, Shield, Waves, Pipette, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import logo from "@/assets/logo.png";
 
@@ -35,16 +34,16 @@ export const Navigation = () => {
   };
 
   const productCategories = [
-    { name: "Medical Equipment", path: "/products/medical-equipment" },
-    { name: "Microbiology and Biotechnology", path: "/products/microbiology-biotechnology" },
-    { name: "Glassware", path: "/products/glassware" },
-    { name: "Laboratory Chemicals and Reagents", path: "/products/laboratory-chemicals" },
-    { name: "Water Analysis Instruments and Water Treatment", path: "/products/water-analysis" },
-    { name: "Laboratory and Material Testing", path: "/products/laboratory-testing" },
-    { name: "Safety Products", path: "/products/safety-products" },
-    { name: "Waste Water, Pool and Spa Filtration", path: "/products/waste-water-filtration" },
-    { name: "Palintest Kits", path: "/products/palintest-kits" },
-    { name: "Lab Equipment", path: "/products/lab-equipment" },
+    { name: "Medical Equipment", path: "/products/medical-equipment", icon: HeartPulse },
+    { name: "Microbiology and Biotechnology", path: "/products/microbiology-biotechnology", icon: Microscope },
+    { name: "Glassware", path: "/products/glassware", icon: Beaker },
+    { name: "Laboratory Chemicals and Reagents", path: "/products/laboratory-chemicals", icon: FlaskConical },
+    { name: "Water Analysis Instruments and Water Treatment", path: "/products/water-analysis", icon: Droplet },
+    { name: "Laboratory and Material Testing", path: "/products/laboratory-testing", icon: TestTube },
+    { name: "Safety Products", path: "/products/safety-products", icon: Shield },
+    { name: "Waste Water, Pool and Spa Filtration", path: "/products/waste-water-filtration", icon: Waves },
+    { name: "Palintest Kits", path: "/products/palintest-kits", icon: Pipette },
+    { name: "Lab Equipment", path: "/products/lab-equipment", icon: Settings },
   ];
 
   return (
