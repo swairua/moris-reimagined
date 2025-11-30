@@ -29,7 +29,6 @@ export const usePageMeta = ({
   author,
   publishedDate,
   modifiedDate,
-  organizationSchema,
 }: PageMetaProps) => {
   useEffect(() => {
     // Set document title
