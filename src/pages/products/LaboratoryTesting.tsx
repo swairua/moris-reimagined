@@ -2,14 +2,33 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 
 const products = [
-  "Beverage Testing Equipment",
-  "Packaging Testing Equipment",
-  "Quality Testing Equipment",
-  "Material Strength Testers",
-  "Texture Analyzers",
-  "Viscosity Meters",
-  "Compression Testing Machines",
-  "Tensile Testing Equipment",
+  {
+    name: "Beverage Testing Equipment",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F54700a0afce24d8da089947a629fd4e5?format=webp&width=800",
+  },
+  {
+    name: "Packaging Testing Equipment",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F390636224eb3470ebf882a5542bf5887?format=webp&width=800",
+  },
+  {
+    name: "Quality Testing Equipment",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F08c9c9f6ecce4a3e8247c69ce66443f7?format=webp&width=800",
+  },
+  {
+    name: "Material Strength Testers",
+  },
+  {
+    name: "Texture Analyzers",
+  },
+  {
+    name: "Viscosity Meters",
+  },
+  {
+    name: "Compression Testing Machines",
+  },
+  {
+    name: "Tensile Testing Equipment",
+  },
 ];
 
 const LaboratoryTesting = () => {
@@ -22,14 +41,27 @@ const LaboratoryTesting = () => {
         {products.map((product, index) => (
           <Card
             key={index}
-            className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
+              product.image ? "overflow-hidden" : "p-6"
+            }`}
           >
-            <h3 className="text-xl font-display font-semibold text-foreground mb-2">
-              {product}
-            </h3>
-            <p className="text-muted-foreground">
-              Advanced testing equipment for accurate material and quality analysis.
-            </p>
+            {product.image && (
+              <div className="relative w-full h-48 overflow-hidden bg-muted">
+                <img
+                  src={product.image}
+                  alt={product.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            )}
+            <div className={product.image ? "p-6" : ""}>
+              <h3 className="text-xl font-display font-semibold text-foreground mb-2">
+                {product.name}
+              </h3>
+              <p className="text-muted-foreground">
+                Advanced testing equipment for accurate material and quality analysis.
+              </p>
+            </div>
           </Card>
         ))}
       </div>

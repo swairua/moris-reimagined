@@ -2,6 +2,10 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 
 const products = [
+  {
+    name: "Complete PPE Kit",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2Fddb43e85526a43be99203887e2c4499b?format=webp&width=800",
+  },
   "Laboratory Coats and Aprons",
   "Safety Goggles and Face Shields",
   "Gloves (Nitrile, Latex, and Chemical Resistant)",
@@ -21,19 +25,37 @@ const SafetyProducts = () => {
       description="Complete range of personal protective equipment (PPE) under one roof. ISO certified products manufactured using innovative designs with the latest technology to ensure workplace safety."
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {products.map((product, index) => (
-          <Card
-            key={index}
-            className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-          >
-            <h3 className="text-xl font-display font-semibold text-foreground mb-2">
-              {product}
-            </h3>
-            <p className="text-muted-foreground">
-              ISO certified safety equipment for comprehensive workplace protection.
-            </p>
-          </Card>
-        ))}
+        {products.map((product, index) => {
+          const productName = typeof product === "string" ? product : product.name;
+          const productImage = typeof product === "object" ? product.image : undefined;
+
+          return (
+            <Card
+              key={index}
+              className={`hover:shadow-xl transition-all duration-300 hover:-translate-y-1 ${
+                productImage ? "overflow-hidden" : "p-6"
+              }`}
+            >
+              {productImage && (
+                <div className="relative w-full h-48 overflow-hidden bg-muted">
+                  <img
+                    src={productImage}
+                    alt={productName}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
+              <div className={productImage ? "p-6" : ""}>
+                <h3 className="text-xl font-display font-semibold text-foreground mb-2">
+                  {productName}
+                </h3>
+                <p className="text-muted-foreground">
+                  ISO certified safety equipment for comprehensive workplace protection.
+                </p>
+              </div>
+            </Card>
+          );
+        })}
       </div>
 
       <div className="mt-12 prose prose-lg max-w-none">

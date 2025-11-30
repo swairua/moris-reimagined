@@ -2,16 +2,46 @@ import { ProductPageLayout } from "@/components/ProductPageLayout";
 import { Card } from "@/components/ui/card";
 
 const products = [
-  "Borosilicate Glass Beakers",
-  "Volumetric Flasks",
-  "Burettes and Pipettes",
-  "Test Tubes and Culture Tubes",
-  "Measuring Cylinders",
-  "Conical Flasks",
-  "Petri Dishes",
-  "Watch Glasses",
-  "Funnels and Separating Funnels",
-  "Laboratory Bottles",
+  {
+    name: "Borosilicate Glass Beakers",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F5378c18201dc4b65804c4ed0e1389866?format=webp&width=800",
+  },
+  {
+    name: "Volumetric Flasks",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2Fd7ce9b9e10d04f95bce29adb5c6b0148?format=webp&width=800",
+  },
+  {
+    name: "Burettes and Pipettes",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2Fe783f30d45ed46a0bf3afe60ffdae762?format=webp&width=800",
+  },
+  {
+    name: "Test Tubes and Culture Tubes",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F43e7eaf8b8b140519fbc5e21a6adde9c?format=webp&width=800",
+  },
+  {
+    name: "Measuring Cylinders",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F576e662740994f638d34408e07a31063?format=webp&width=800",
+  },
+  {
+    name: "Conical Flasks",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F9216b9a917e047d9ba8ace110bbf1299?format=webp&width=800",
+  },
+  {
+    name: "Petri Dishes",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F4c7ea0cdab724020919d806605848234?format=webp&width=800",
+  },
+  {
+    name: "Watch Glasses",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2F725511ef213c4a1cb38f05fa99b3638c?format=webp&width=800",
+  },
+  {
+    name: "Funnels and Separating Funnels",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2Ff0c6a6887fc24bb2b06ebcf748a5a79d?format=webp&width=800",
+  },
+  {
+    name: "Laboratory Bottles",
+    image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2Faf6291065ebe4d4ea99d5852d358df85?format=webp&width=800",
+  },
 ];
 
 const Glassware = () => {
@@ -24,14 +54,23 @@ const Glassware = () => {
         {products.map((product, index) => (
           <Card
             key={index}
-            className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+            className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
           >
-            <h3 className="text-xl font-display font-semibold text-foreground mb-2">
-              {product}
-            </h3>
-            <p className="text-muted-foreground">
-              Precision-crafted borosilicate glass for reliable laboratory operations.
-            </p>
+            <div className="relative w-full h-48 overflow-hidden bg-muted">
+              <img
+                src={product.image}
+                alt={product.name}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-6">
+              <h3 className="text-xl font-display font-semibold text-foreground mb-2">
+                {product.name}
+              </h3>
+              <p className="text-muted-foreground">
+                Precision-crafted borosilicate glass for reliable laboratory operations.
+              </p>
+            </div>
           </Card>
         ))}
       </div>
