@@ -15,6 +15,7 @@ import SafetyProducts from "./pages/products/SafetyProducts";
 import WasteWaterFiltration from "./pages/products/WasteWaterFiltration";
 import PalintestKits from "./pages/products/PalintestKits";
 import LabEquipment from "./pages/products/LabEquipment";
+import AutomobileSupplies from "./pages/products/AutomobileSupplies";
 
 const queryClient = new QueryClient();
 
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/products/waste-water-filtration" element={<WasteWaterFiltration />} />
           <Route path="/products/palintest-kits" element={<PalintestKits />} />
           <Route path="/products/lab-equipment" element={<LabEquipment />} />
+          <Route path="/products/automobile-supplies" element={<AutomobileSupplies />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

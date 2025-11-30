@@ -15,8 +15,8 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src={logo} alt="Moris Enterprises" className="h-12 w-12" />
-              <span className="text-xl font-display font-bold">Moris Enterprises</span>
+              <img src={logo} alt="Moris Enterprises" className="h-16 w-16" />
+              <span className="text-2xl font-display font-bold">Moris Enterprises</span>
             </div>
             <p className="text-background/80 leading-relaxed">
               Leading supplier of laboratory chemicals, medical instruments, and biotechnology equipment since 2010.
