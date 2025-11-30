@@ -8,18 +8,49 @@ import { openProductQuotation } from "@/lib/whatsapp";
 const products = [
   {
     name: "Complete PPE Kit",
+    description: "Comprehensive personal protective equipment kit with all essential items for complete workplace protection.",
     image: "https://cdn.builder.io/api/v1/image/assets%2F8a4218e21c624724bb59cc87fa693142%2Fddb43e85526a43be99203887e2c4499b?format=webp&width=800",
   },
-  "Laboratory Coats and Aprons",
-  "Safety Goggles and Face Shields",
-  "Gloves (Nitrile, Latex, and Chemical Resistant)",
-  "Respirators and Face Masks",
-  "Safety Shoes and Boots",
-  "Ear Protection",
-  "Head Protection - Hard Hats",
-  "First Aid Kits",
-  "Safety Signage",
-  "Spill Control Products",
+  {
+    name: "Laboratory Coats and Aprons",
+    description: "Professional-grade laboratory coats and aprons for safe chemical and biological handling.",
+  },
+  {
+    name: "Safety Goggles and Face Shields",
+    description: "Impact-resistant eye protection devices for chemical splash and particle protection.",
+  },
+  {
+    name: "Gloves (Nitrile, Latex, and Chemical Resistant)",
+    description: "Multiple glove materials for different handling requirements and chemical compatibility.",
+  },
+  {
+    name: "Respirators and Face Masks",
+    description: "Respiratory protection devices for hazardous fume and particulate protection.",
+  },
+  {
+    name: "Safety Shoes and Boots",
+    description: "Protective footwear with slip-resistant soles and chemical-resistant materials.",
+  },
+  {
+    name: "Ear Protection",
+    description: "Noise-reducing earplugs and earmuffs for loud laboratory environments.",
+  },
+  {
+    name: "Head Protection - Hard Hats",
+    description: "Durable hard hats for protection against falling objects and impact hazards.",
+  },
+  {
+    name: "First Aid Kits",
+    description: "Complete first aid kits stocked with essential medical supplies and emergency treatments.",
+  },
+  {
+    name: "Safety Signage",
+    description: "Hazard warning signs and safety labels for proper laboratory hazard communication.",
+  },
+  {
+    name: "Spill Control Products",
+    description: "Absorbent materials and containment products for chemical spill cleanup.",
+  },
 ];
 
 
@@ -44,8 +75,8 @@ const SafetyProducts = () => {
     >
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((product, index) => {
-          const productName = typeof product === "string" ? product : product.name;
-          const productImage = typeof product === "object" ? product.image : undefined;
+          const productName = product.name;
+          const productImage = product.image;
 
           return (
             <Card
@@ -68,7 +99,7 @@ const SafetyProducts = () => {
                   {productName}
                 </h3>
                 <p className="text-muted-foreground flex-1">
-                  ISO certified safety equipment for comprehensive workplace protection.
+                  {product.description}
                 </p>
                 <Button
                   onClick={() => openProductQuotation(productName)}
