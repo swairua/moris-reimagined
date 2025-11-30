@@ -101,14 +101,15 @@ const LabEquipment = () => {
 
       <div className="mt-12 prose prose-lg max-w-none">
         <h2 className="text-3xl font-display font-bold text-foreground mb-4">
-          Advanced Laboratory Equipment
+          Advanced Laboratory and Technical Training Equipment
         </h2>
         <p className="text-muted-foreground leading-relaxed">
-          Our product range includes a wide variety of laboratory equipment including atomic absorption 
-          spectrophotometer, flame photometer, UV-Vis spectrophotometer, photo colorimeter, melting point 
-          apparatus, and water and soil analysis kits. We also supply essential laboratory equipment such 
-          as autoclaves, laboratory balances, centrifuges, homogenizers, furnaces, and incubators to support 
-          comprehensive laboratory operations.
+          Our comprehensive product range includes advanced laboratory equipment alongside specialized
+          technical and vocational training systems. We supply hydraulic systems, pneumatic trainers,
+          CNC machines, robotic systems, and mechanical testing apparatus for educational institutions
+          and technical centers. Combined with traditional laboratory instruments such as spectrophotometers,
+          balances, centrifuges, and analytical equipment, we provide complete solutions for both
+          academic laboratories and industrial training facilities.
         </p>
       </div>
     </ProductPageLayout>
