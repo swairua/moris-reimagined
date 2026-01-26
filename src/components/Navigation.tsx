@@ -147,7 +147,10 @@ export const Navigation = () => {
             </div>
 
             <button
-              onClick={() => navigate("/products/automobile-supplies")}
+              onClick={() => {
+                trackEvent('product_category_clicked', { category: 'Automobile Supplies' });
+                navigate("/products/automobile-supplies");
+              }}
               className="px-4 py-2 text-sm font-medium text-foreground hover:text-primary transition-all duration-200 relative group"
             >
               Automobile Supplies
