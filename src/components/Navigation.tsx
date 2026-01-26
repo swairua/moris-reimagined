@@ -26,6 +26,7 @@ export const Navigation = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
+    trackEvent('navigation_link_clicked', { section: id });
     navigate("/");
     setTimeout(() => {
       const element = document.getElementById(id);
