@@ -104,6 +104,13 @@ const routesToPrerender = [
     keywords:
       "laboratory chemicals, reagents, chemical supplies, lab reagents Kenya",
   },
+  // Product detail pages for automobile supplies
+  ...automobileProducts.map((product) => ({
+    path: `/products/automobile-supplies/${product.id}`,
+    title: product.title,
+    description: product.description,
+    keywords: product.keywords,
+  })),
 ];
 
 async function prerender() {
