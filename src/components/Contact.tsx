@@ -10,6 +10,7 @@ import { createWhatsAppMessage, openWhatsApp, getWhatsAppNumber } from "@/lib/wh
 
 export const Contact = () => {
   const { toast } = useToast();
+  const { trackEvent } = useAnalytics();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
