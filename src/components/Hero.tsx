@@ -90,7 +90,10 @@ export const Hero = () => {
         {sliderImages.map((_, index) => (
           <button
             key={index}
-            onClick={() => setCurrentImageIndex(index)}
+            onClick={() => {
+              trackEvent('hero_slider_indicator_clicked', { slide_index: index });
+              setCurrentImageIndex(index);
+            }}
             className={`h-3 rounded-full transition-all duration-300 ${
               index === currentImageIndex
                 ? "bg-white w-8"
