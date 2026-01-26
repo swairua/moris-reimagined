@@ -21,6 +21,7 @@ import ChromatographyConsumables from "./pages/products/ChromatographyConsumable
 import EquipmentQualityControl from "./pages/products/EquipmentQualityControl";
 import Filtration from "./pages/products/Filtration";
 import LaboratoryMaterialTesting from "./pages/products/LaboratoryMaterialTesting";
+import ProductDetail from "./pages/products/ProductDetail";
 
 const queryClient = new QueryClient();
 
