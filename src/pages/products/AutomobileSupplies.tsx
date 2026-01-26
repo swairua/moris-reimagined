@@ -106,8 +106,8 @@ const AutomobileSupplies = () => {
             className="flex gap-6 overflow-x-auto pb-4 scroll-smooth"
             style={{ scrollBehavior: "smooth" }}
           >
-            {products.map((product, index) => (
-              <div key={index} className="w-80 flex-shrink-0">
+            {automobileProducts.map((product) => (
+              <div key={product.id} className="w-80 flex-shrink-0">
                 <ProductCard product={product} />
               </div>
             ))}
