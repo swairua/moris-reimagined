@@ -347,6 +347,3 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
-
-// Add React import for useEffect
-import React from "react";
