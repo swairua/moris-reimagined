@@ -12,35 +12,27 @@ import NotFound from "@/pages/NotFound";
 const ProductDetail = () => {
   const { productId } = useParams<{ productId: string }>();
   const navigate = useNavigate();
-  
-  if (!productId) {
-    return <NotFound />;
-  }
 
-  const product = getProductBySlug(productId);
-
-  if (!product) {
-    return <NotFound />;
-  }
+  const product = productId ? getProductBySlug(productId) : null;
 
   // Set page meta tags with product-specific SEO data
   usePageMeta({
-    title: product.title,
-    description: product.description,
-    keywords: product.keywords,
-    image: product.image,
+    title: product?.title || "Product Not Found",
+    description: product?.description || "The product you are looking for could not be found.",
+    keywords: product?.keywords || "",
+    image: product?.image || "",
     type: "product",
-    canonical: `https://morisenterprises.com/products/automobile-supplies/${product.id}`,
-    breadcrumbs: [
+    canonical: product ? `https://morisenterprises.com/products/automobile-supplies/${product.id}` : "https://morisenterprises.com",
+    breadcrumbs: product ? [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },
       { name: "Automobile Supplies", url: "/products/automobile-supplies" },
       { name: product.name, url: `/products/automobile-supplies/${product.id}` },
-    ],
+    ] : [],
   });
 
   // Add Product schema structured data
-  const productSchema = {
+  const productSchema = product ? {
     "@context": "https://schema.org",
     "@type": "Product",
     name: product.name,
@@ -56,10 +48,11 @@ const ProductDetail = () => {
       priceCurrency: "KES",
       availability: "https://schema.org/InStock",
     },
-  };
+  } : null;
 
   // Add schema to head
   React.useEffect(() => {
+    if (!productSchema) return;
     let productScript = document.querySelector('script[data-product-schema]');
     if (productScript) {
       productScript.textContent = JSON.stringify(productSchema);
@@ -70,14 +63,21 @@ const ProductDetail = () => {
       productScript.textContent = JSON.stringify(productSchema);
       document.head.appendChild(productScript);
     }
-  }, [product.id]);
+  }, [product?.id, productSchema]);
 
   // Get related products (products from the same category, excluding current)
-  const relatedProducts = automobileProducts
-    .filter(
-      (p) => p.category === product.category && p.id !== product.id
-    )
-    .slice(0, 3);
+  const relatedProducts = product
+    ? automobileProducts
+        .filter(
+          (p) => p.category === product.category && p.id !== product.id
+        )
+        .slice(0, 3)
+    : [];
+
+  // Early return after all hooks are called
+  if (!product) {
+    return <NotFound />;
+  }
 
   return (
     <ProductPageLayout
