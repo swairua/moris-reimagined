@@ -125,14 +125,20 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button
               size="lg"
-              onClick={() => scrollToSection("services")}
+              onClick={() => {
+                trackEvent('hero_cta_clicked', { button: 'explore_services' });
+                scrollToSection("services");
+              }}
               className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 text-lg px-8 py-6"
             >
               Explore Our Services
             </Button>
             <Button
               size="lg"
-              onClick={() => scrollToSection("contact")}
+              onClick={() => {
+                trackEvent('hero_cta_clicked', { button: 'contact_us' });
+                scrollToSection("contact");
+              }}
               className="bg-white/20 border-2 border-primary-foreground text-primary-foreground hover:bg-white/30 text-lg px-8 py-6 backdrop-blur-sm"
             >
               <Phone className="mr-2 h-5 w-5" />
