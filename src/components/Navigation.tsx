@@ -7,6 +7,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Menu, X, ChevronDown, HeartPulse, Microscope, Beaker, FlaskConical, Droplet, TestTube, Shield, Waves, Pipette, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { useAnalytics } from "@/hooks/use-analytics";
 import logo from "@/assets/logo.png";
 
 export const Navigation = () => {
