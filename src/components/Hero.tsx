@@ -30,12 +30,14 @@ export const Hero = () => {
   }, []);
 
   const goToPrevious = () => {
+    trackEvent('hero_slider_navigation', { direction: 'previous' });
     setCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? sliderImages.length - 1 : prevIndex - 1
     );
   };
 
   const goToNext = () => {
+    trackEvent('hero_slider_navigation', { direction: 'next' });
     setCurrentImageIndex((prevIndex) => (prevIndex + 1) % sliderImages.length);
   };
 
