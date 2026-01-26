@@ -24,35 +24,6 @@ import ProductDetail from "./pages/products/ProductDetail";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
-      <Toaster />
-      <Sonner />
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<Index />} />
-        <Route path="/products/medical-equipment" element={<MedicalEquipment />} />
-        <Route path="/products/microbiology-biotechnology" element={<MicrobiologyBiotechnology />} />
-        <Route path="/products/glassware" element={<Glassware />} />
-        <Route path="/products/laboratory-chemicals" element={<LaboratoryChemicals />} />
-        <Route path="/products/chromatography-consumables" element={<ChromatographyConsumables />} />
-        <Route path="/products/equipment-quality-control" element={<EquipmentQualityControl />} />
-        <Route path="/products/water-analysis" element={<WaterAnalysis />} />
-        <Route path="/products/laboratory-testing" element={<LaboratoryTesting />} />
-        <Route path="/products/safety-products" element={<SafetyProducts />} />
-        <Route path="/products/waste-water-filtration" element={<WasteWaterFiltration />} />
-        <Route path="/products/palintest-kits" element={<PalintestKits />} />
-        <Route path="/products/lab-equipment" element={<LabEquipment />} />
-        <Route path="/products/filtration" element={<Filtration />} />
-        <Route path="/products/laboratory-material-testing" element={<LaboratoryMaterialTesting />} />
-        <Route path="/products/automobile-supplies" element={<AutomobileSupplies />} />
-        <Route path="/products/automobile-supplies/:productId" element={<ProductDetail />} />
-        {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
-  </QueryClientProvider>
-);
+const App = () => <div style={{ padding: '20px' }}>Hello World - App is loading</div>;
 
 export default App;
