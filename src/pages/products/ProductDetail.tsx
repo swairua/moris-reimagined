@@ -47,7 +47,11 @@ const ProductDetail = () => {
     category: product.category,
     offers: {
       "@type": "AggregateOffer",
-      priceCurrency: "KES",
+      priceCurrency: product.priceRange?.currency || "KES",
+      ...(product.priceRange && {
+        lowPrice: product.priceRange.minPrice.toString(),
+        highPrice: product.priceRange.maxPrice.toString(),
+      }),
       availability: "https://schema.org/InStock",
     },
   } : null;
