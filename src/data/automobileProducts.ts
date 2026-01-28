@@ -87,6 +87,11 @@ export const automobileProducts: AutomobileProduct[] = [
       application: "Heavy-duty vehicle suspension",
     },
     category: "Suspension Springs",
+    priceRange: {
+      minPrice: 8500,
+      maxPrice: 11000,
+      currency: "KES",
+    },
     availability: "In Stock",
   },
   {
