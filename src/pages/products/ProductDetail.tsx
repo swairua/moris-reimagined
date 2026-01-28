@@ -92,6 +92,16 @@ const ProductDetail = () => {
       description={product.shortDescription}
     >
       <div className="max-w-6xl mx-auto">
+        {/* Breadcrumb Navigation */}
+        <Breadcrumb
+          items={[
+            { name: "Home", url: "/" },
+            { name: "Products", url: "/#services" },
+            { name: "Automobile Supplies", url: "/products/automobile-supplies" },
+            { name: product.name, url: `/products/automobile-supplies/${product.id}` },
+          ]}
+        />
+
         {/* Product Main Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           {/* Product Image */}
