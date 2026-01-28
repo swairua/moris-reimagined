@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { ProductPageLayout } from "@/components/ProductPageLayout";
+import { Breadcrumb } from "@/components/Breadcrumb";
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, ArrowRight } from "lucide-react";
@@ -47,7 +48,11 @@ const ProductDetail = () => {
     category: product.category,
     offers: {
       "@type": "AggregateOffer",
-      priceCurrency: "KES",
+      priceCurrency: product.priceRange?.currency || "KES",
+      ...(product.priceRange && {
+        lowPrice: product.priceRange.minPrice.toString(),
+        highPrice: product.priceRange.maxPrice.toString(),
+      }),
       availability: "https://schema.org/InStock",
     },
   } : null;
@@ -87,6 +92,16 @@ const ProductDetail = () => {
       description={product.shortDescription}
     >
       <div className="max-w-6xl mx-auto">
+        {/* Breadcrumb Navigation */}
+        <Breadcrumb
+          items={[
+            { name: "Home", url: "/" },
+            { name: "Products", url: "/#services" },
+            { name: "Automobile Supplies", url: "/products/automobile-supplies" },
+            { name: product.name, url: `/products/automobile-supplies/${product.id}` },
+          ]}
+        />
+
         {/* Product Main Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           {/* Product Image */}
@@ -221,6 +236,17 @@ const ProductDetail = () => {
                   via WhatsApp
                 </li>
               </ul>
+
+              <p className="text-muted-foreground leading-relaxed mt-6">
+                For optimal suspension performance, consider pairing your coil springs with our{" "}
+                <button
+                  onClick={() => navigate("/products/automobile-supplies")}
+                  className="text-primary hover:underline font-semibold"
+                >
+                  professional-grade shock absorbers
+                </button>
+                . Our complete suspension solutions ensure smooth handling and vehicle stability across Kenya's varied road conditions.
+              </p>
             </>
           )}
 
@@ -251,6 +277,17 @@ const ProductDetail = () => {
                   WhatsApp
                 </li>
               </ul>
+
+              <p className="text-muted-foreground leading-relaxed mt-6">
+                For complete suspension system upgrades, pair these shock absorbers with our full range of{" "}
+                <button
+                  onClick={() => navigate("/products/automobile-supplies")}
+                  className="text-primary hover:underline font-semibold"
+                >
+                  KOMU coil springs
+                </button>
+                . Quality suspension components work together to deliver superior vehicle performance and safety.
+              </p>
             </>
           )}
         </div>
@@ -312,48 +349,61 @@ const ProductDetail = () => {
           <div className="space-y-6">
             <div className="p-6 bg-secondary/10 rounded-lg">
               <h4 className="font-semibold text-foreground mb-2">
-                What are the specifications for this product?
+                What are the specifications and load capacity of this {product.category.toLowerCase()}?
               </h4>
               <p className="text-muted-foreground">
-                This {product.name.toLowerCase()} comes with{" "}
-                {product.specifications?.grade?.toLowerCase() || "professional-grade"}{" "}
-                specifications and is designed for{" "}
-                {product.specifications?.application?.toLowerCase() || "automotive applications"}.
-                Contact us via WhatsApp for detailed technical specifications.
+                The {product.name} is engineered as {product.specifications?.grade?.toLowerCase() || "a professional-grade component"} with {product.specifications?.loadCapacity?.toLowerCase() || "optimal"} load capacity. The {product.specifications?.material?.toLowerCase() || "premium steel"} construction ensures durability and reliability for {product.specifications?.application?.toLowerCase() || "automotive suspension systems"}. These coil springs provide excellent corrosion resistance suitable for Kenya's climate and road conditions. For detailed technical specifications including diameter, spring rate, and compression specifications, contact our team via WhatsApp.
               </p>
             </div>
 
             <div className="p-6 bg-secondary/10 rounded-lg">
               <h4 className="font-semibold text-foreground mb-2">
-                How quickly can you deliver in Kenya?
+                What is the delivery timeline for KOMU {product.category} in Kenya?
               </h4>
               <p className="text-muted-foreground">
-                We maintain stock of our {product.category.toLowerCase()} for fast delivery across
-                Kenya. Delivery timelines depend on your location and order size. Request a quotation
-                via WhatsApp to confirm delivery availability.
+                We maintain in-stock inventory of our {product.name} at our Nairobi facility for fast delivery across Kenya. For individual orders, we typically deliver within 1-3 business days depending on your location. Bulk orders to Mombasa, Kisumu, Eldoret, and other regions can be arranged with flexible timelines. Delivery costs vary based on destination. Request a detailed quotation including shipping costs via WhatsApp and we'll provide an accurate delivery estimate for your specific location and order quantity.
               </p>
             </div>
 
             <div className="p-6 bg-secondary/10 rounded-lg">
               <h4 className="font-semibold text-foreground mb-2">
-                Can I get a bulk discount?
+                What bulk discounts are available for automotive service centers and fleet operators?
               </h4>
               <p className="text-muted-foreground">
-                Yes! We offer competitive bulk pricing for automotive service centers and fleet
-                operators. Contact us via WhatsApp with your requirements for a custom quotation.
+                We offer competitive tiered bulk pricing for automotive service centers, fleet operators, and wholesale partners. Discounts increase significantly with larger order quantities and recurring purchases. Bulk orders typically include 4-8 sets or more depending on your fleet size. We also offer volume discounts for mixed product orders including both {product.name} and complementary suspension components. Contact us via WhatsApp with your annual requirements, and our sales team will provide a customized bulk pricing proposal tailored to your business needs.
               </p>
             </div>
 
             <div className="p-6 bg-secondary/10 rounded-lg">
               <h4 className="font-semibold text-foreground mb-2">
-                Is this product compatible with other systems?
+                Which vehicle models are compatible with these {product.category}?
               </h4>
               <p className="text-muted-foreground">
-                Our {product.name.toLowerCase()} is designed to work with standard automotive
-                systems. For compatibility questions or specific technical requirements, please reach
-                out to us via WhatsApp for expert advice.
+                The {product.name} is designed for standard automotive suspension systems. Compatibility depends on your vehicle's model year, suspension type, and specific suspension geometry. While these springs work with most standard vehicles, we recommend confirming compatibility with your mechanic before ordering. Our technical team can provide compatibility guidance for specific vehicle makes and models (including popular Kenya vehicles like Toyota, Nissan, Isuzu, Mitsubishi, and Hyundai). Contact us via WhatsApp with your vehicle details for professional compatibility assessment.
               </p>
             </div>
+
+            {product.category === "Suspension Springs" && (
+              <div className="p-6 bg-secondary/10 rounded-lg">
+                <h4 className="font-semibold text-foreground mb-2">
+                  How long do KOMU coil springs typically last?
+                </h4>
+                <p className="text-muted-foreground">
+                  Our KOMU coil springs are engineered for extended lifespan under normal operating conditions. Quality {product.specifications?.grade?.toLowerCase() || "professional-grade"} coil springs typically last 50,000-100,000+ kilometers depending on road conditions, vehicle load, and maintenance practices. Kenya's road conditions are demanding, and our coil springs are specifically engineered with corrosion-resistant finishes to handle the climate. Proper maintenance, regular inspections, and avoiding overloading extend spring life significantly. If you notice bouncy suspension, clunking noises, or uneven vehicle height, it may indicate spring replacement is needed.
+                </p>
+              </div>
+            )}
+
+            {product.category === "Shock Absorbers" && (
+              <div className="p-6 bg-secondary/10 rounded-lg">
+                <h4 className="font-semibold text-foreground mb-2">
+                  How do I know if my shock absorbers need replacement?
+                </h4>
+                <p className="text-muted-foreground">
+                  Common signs of failing shock absorbers include excessive bouncing after bumps, nose-diving during braking, uneven tire wear, and leaking fluid on the shock absorber body. Rough handling on Kenya's road conditions accelerates shock wear. Most shock absorbers last 50,000-80,000 kilometers before showing significant deterioration. Our professional-grade shock absorbers provide smooth suspension control and can be paired with quality coil springs for optimal vehicle suspension performance. If you're experiencing suspension issues, we recommend having your shocks inspected by a qualified mechanic.
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>

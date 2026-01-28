@@ -113,6 +113,41 @@ const routesToPrerender = [
   })),
 ];
 
+function generateSitemap() {
+  const sitemap = [`<?xml version="1.0" encoding="UTF-8"?>`];
+  sitemap.push(`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`);
+
+  // Get current date in ISO format (YYYY-MM-DD)
+  const currentDate = new Date().toISOString().split('T')[0];
+
+  // Add all routes to sitemap
+  for (const route of routesToPrerender) {
+    sitemap.push(`  <url>`);
+    sitemap.push(`    <loc>https://morisenterprises.com${route.path}</loc>`);
+    sitemap.push(`    <lastmod>${currentDate}</lastmod>`);
+
+    // Set change frequency based on route type
+    if (route.path === '/') {
+      sitemap.push(`    <changefreq>weekly</changefreq>`);
+      sitemap.push(`    <priority>1.0</priority>`);
+    } else if (route.path.includes('/products/automobile-supplies/')) {
+      sitemap.push(`    <changefreq>monthly</changefreq>`);
+      sitemap.push(`    <priority>0.8</priority>`);
+    } else if (route.path.includes('/products/')) {
+      sitemap.push(`    <changefreq>weekly</changefreq>`);
+      sitemap.push(`    <priority>0.9</priority>`);
+    } else {
+      sitemap.push(`    <changefreq>monthly</changefreq>`);
+      sitemap.push(`    <priority>0.8</priority>`);
+    }
+
+    sitemap.push(`  </url>`);
+  }
+
+  sitemap.push(`</urlset>`);
+  return sitemap.join('\n');
+}
+
 async function prerender() {
   if (!fs.existsSync(indexHtmlPath)) {
     console.error(`❌ Error: ${indexHtmlPath} not found. Run 'npm run build' first.`);
@@ -150,6 +185,16 @@ async function prerender() {
     } catch (error) {
       console.error(`❌ Error prerendering ${route.path}:`, error.message);
     }
+  }
+
+  // Generate sitemap.xml
+  try {
+    const sitemapContent = generateSitemap();
+    const sitemapPath = path.join(distDir, "sitemap.xml");
+    fs.writeFileSync(sitemapPath, sitemapContent);
+    console.log(`✅ Generated sitemap.xml with ${routesToPrerender.length} URLs`);
+  } catch (error) {
+    console.error(`❌ Error generating sitemap:`, error.message);
   }
 
   console.log(`\n✨ Prerendering complete! Generated ${routesToPrerender.length} static pages.`);

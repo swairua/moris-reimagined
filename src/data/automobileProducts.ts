@@ -16,6 +16,11 @@ export interface AutomobileProduct {
   };
   category: string;
   price?: string;
+  priceRange?: {
+    minPrice: number;
+    maxPrice: number;
+    currency: string;
+  };
   availability?: string;
 }
 
@@ -36,6 +41,11 @@ export const automobileProducts: AutomobileProduct[] = [
       application: "Sedan vehicle suspension",
     },
     category: "Suspension Springs",
+    priceRange: {
+      minPrice: 4500,
+      maxPrice: 6500,
+      currency: "KES",
+    },
     availability: "In Stock",
   },
   {
@@ -54,6 +64,11 @@ export const automobileProducts: AutomobileProduct[] = [
       application: "Commercial vehicle suspension",
     },
     category: "Suspension Springs",
+    priceRange: {
+      minPrice: 7500,
+      maxPrice: 9500,
+      currency: "KES",
+    },
     availability: "In Stock",
   },
   {
@@ -72,6 +87,11 @@ export const automobileProducts: AutomobileProduct[] = [
       application: "Heavy-duty vehicle suspension",
     },
     category: "Suspension Springs",
+    priceRange: {
+      minPrice: 8500,
+      maxPrice: 11000,
+      currency: "KES",
+    },
     availability: "In Stock",
   },
   {
@@ -90,6 +110,11 @@ export const automobileProducts: AutomobileProduct[] = [
       application: "Truck and heavy commercial vehicles",
     },
     category: "Suspension Springs",
+    priceRange: {
+      minPrice: 9500,
+      maxPrice: 12500,
+      currency: "KES",
+    },
     availability: "In Stock",
   },
   {
@@ -108,6 +133,11 @@ export const automobileProducts: AutomobileProduct[] = [
       application: "Standard vehicle suspension maintenance",
     },
     category: "Suspension Springs",
+    priceRange: {
+      minPrice: 3500,
+      maxPrice: 5000,
+      currency: "KES",
+    },
     availability: "In Stock",
   },
   {
@@ -126,6 +156,11 @@ export const automobileProducts: AutomobileProduct[] = [
       application: "Premium vehicle suspension systems",
     },
     category: "Suspension Springs",
+    priceRange: {
+      minPrice: 10000,
+      maxPrice: 14000,
+      currency: "KES",
+    },
     availability: "In Stock",
   },
   {
@@ -142,6 +177,11 @@ export const automobileProducts: AutomobileProduct[] = [
       application: "Universal shock absorption",
     },
     category: "Shock Absorbers",
+    priceRange: {
+      minPrice: 6000,
+      maxPrice: 9000,
+      currency: "KES",
+    },
     availability: "In Stock",
   },
 ];
