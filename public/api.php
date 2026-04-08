@@ -20,18 +20,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 require_once __DIR__ . '/config.php';
 
 // Load database class
-require_once __DIR__ . '/models/Database.php';
+require_once __DIR__ . '/Database.php';
 
 // Load middleware
-require_once __DIR__ . '/middleware/AuthMiddleware.php';
+require_once __DIR__ . '/AuthMiddleware.php';
 
 // Load handlers
-require_once __DIR__ . '/handlers/LeadHandler.php';
-require_once __DIR__ . '/handlers/CustomerHandler.php';
-require_once __DIR__ . '/handlers/CampaignHandler.php';
-require_once __DIR__ . '/handlers/AuthHandler.php';
-require_once __DIR__ . '/handlers/ProductHandler.php';
-require_once __DIR__ . '/handlers/TrackingHandler.php';
+require_once __DIR__ . '/LeadHandler.php';
+require_once __DIR__ . '/CustomerHandler.php';
+require_once __DIR__ . '/CampaignHandler.php';
+require_once __DIR__ . '/AuthHandler.php';
+require_once __DIR__ . '/ProductHandler.php';
+require_once __DIR__ . '/TrackingHandler.php';
 
 // Parse URL
 $request_uri = $_SERVER['REQUEST_URI'];
