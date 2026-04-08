@@ -7,9 +7,10 @@
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Route API requests to api.php
-  RewriteRule ^api/(.*)$ api.php?route=$1 [QSA,L]
-  RewriteRule ^api.php$ - [L]
+  # Route API requests to api.php (both /api/ and /api.php/ patterns)
+  RewriteRule ^api\.php/(.*)$ api.php [QSA,L]
+  RewriteRule ^api/(.*)$ api.php [QSA,L]
+  RewriteRule ^api\.php$ - [L]
 
   # Route all other requests to index.html (SPA)
   RewriteRule ^ index.html [QSA,L]

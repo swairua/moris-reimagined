@@ -7,7 +7,7 @@ class AuthHandler {
     private $db;
 
     public function __construct() {
-        $this->db = Database::getInstance()->getConnection();
+        $this->db = Database::getInstance();
     }
 
     /**
@@ -27,12 +27,10 @@ class AuthHandler {
             $password = $input['password'];
 
             // Get user from database
-            $result = $this->db->query(
+            $user = $this->db->fetchOne(
                 'SELECT id, email, password_hash, name FROM users WHERE email = ? AND status = ?',
                 [$email, 'active']
             );
-            $user = $result->fetch_assoc();
-            $result->close();
 
             if (!$user) {
                 http_response_code(401);
@@ -79,17 +77,14 @@ class AuthHandler {
     public function verify() {
         try {
             AuthMiddleware::verify();
-            
+
             $user_id = $_REQUEST['user_id'];
-            $email = $_REQUEST['user_email'];
 
             // Get user details
-            $result = $this->db->query(
+            $user = $this->db->fetchOne(
                 'SELECT id, email, name FROM users WHERE id = ?',
                 [$user_id]
             );
-            $user = $result->fetch_assoc();
-            $result->close();
 
             if (!$user) {
                 http_response_code(401);

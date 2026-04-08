@@ -17,13 +17,25 @@ class Database {
             );
 
             if ($this->connection->connect_error) {
-                throw new Exception('Database connection failed: ' . $this->connection->connect_error);
+                header('Content-Type: application/json');
+                http_response_code(500);
+                echo json_encode([
+                    'error' => 'Database connection failed',
+                    'details' => $this->connection->connect_error
+                ]);
+                exit();
             }
 
             // Set charset to utf8mb4
             $this->connection->set_charset("utf8mb4");
         } catch (Exception $e) {
-            die('Database Error: ' . $e->getMessage());
+            header('Content-Type: application/json');
+            http_response_code(500);
+            echo json_encode([
+                'error' => 'Database error',
+                'details' => $e->getMessage()
+            ]);
+            exit();
         }
     }
 

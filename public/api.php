@@ -13,6 +13,7 @@ header('Content-Type: application/json');
 // Handle preflight requests
 if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     http_response_code(200);
+    echo json_encode(['status' => 'ok']);
     exit();
 }
 
@@ -35,22 +36,28 @@ require_once __DIR__ . '/TrackingHandler.php';
 
 // Parse URL
 $request_uri = $_SERVER['REQUEST_URI'];
-$base_path = '/api';
 
 // Remove query string
 if (strpos($request_uri, '?') !== false) {
     $request_uri = substr($request_uri, 0, strpos($request_uri, '?'));
 }
 
-// Remove base path
-if (strpos($request_uri, $base_path) === 0) {
-    $route = substr($request_uri, strlen($base_path));
-} else {
-    $route = $request_uri;
+// Extract route - handle both /api.php/ and /api/ patterns
+$route = $request_uri;
+
+// Remove /api.php prefix
+if (strpos($route, '/api.php') === 0) {
+    $route = substr($route, 8); // strlen('/api.php') = 8
+}
+// Remove /api prefix
+elseif (strpos($route, '/api/') === 0) {
+    $route = substr($route, 4); // strlen('/api') = 4
 }
 
 // Ensure route starts with /
-if (!empty($route) && $route[0] !== '/') {
+if (empty($route)) {
+    $route = '/';
+} elseif ($route[0] !== '/') {
     $route = '/' . $route;
 }
 
