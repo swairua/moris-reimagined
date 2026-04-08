@@ -33,7 +33,7 @@ export default function AdminDashboard() {
 
   const fetchDashboardStats = async () => {
     try {
-      const response = await fetch('/api/analytics', {
+      const response = await fetch('/api.php/analytics', {
         headers: {
           'Authorization': `Bearer ${token}`
         }
@@ -43,19 +43,19 @@ export default function AdminDashboard() {
         const data = await response.json();
         
         // Get leads count
-        const leadsRes = await fetch('/api/leads?limit=1', {
+        const leadsRes = await fetch('/api.php/leads?limit=1', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const leadsData = await leadsRes.json();
         
         // Get customers count
-        const customersRes = await fetch('/api/customers?limit=1', {
+        const customersRes = await fetch('/api.php/customers?limit=1', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const customersData = await customersRes.json();
         
         // Get campaigns count
-        const campaignsRes = await fetch('/api/campaigns?limit=1', {
+        const campaignsRes = await fetch('/api.php/campaigns?limit=1', {
           headers: { 'Authorization': `Bearer ${token}` }
         });
         const campaignsData = await campaignsRes.json();

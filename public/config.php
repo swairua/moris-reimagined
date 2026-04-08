@@ -21,23 +21,23 @@ if (file_exists($env_file)) {
 }
 
 // Database Configuration
-define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
-define('DB_USER', getenv('DB_USER') ?: 'root');
-define('DB_PASSWORD', getenv('DB_PASSWORD') ?: '');
-define('DB_NAME', getenv('DB_NAME') ?: 'moris_marketing');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'excelmed_morismarketing');
+define('DB_PASSWORD', 'Sirgeorge.12');
+define('DB_NAME', 'excelmed_morismarketing');
 
 // API Configuration
-define('API_URL', getenv('API_URL') ?: 'http://localhost:5173/api');
-define('JWT_SECRET', getenv('JWT_SECRET') ?: 'your_secret_key_here_change_in_production');
+define('API_URL', 'https://morisentreprises.com/api.php');
+define('JWT_SECRET', 'your_secret_key_here_change_in_production');
 
 // SMTP Configuration for Email
-define('SMTP_HOST', getenv('SMTP_HOST') ?: 'smtp.gmail.com');
-define('SMTP_PORT', getenv('SMTP_PORT') ?: 587);
-define('SMTP_USER', getenv('SMTP_USER') ?: 'your-email@gmail.com');
-define('SMTP_PASSWORD', getenv('SMTP_PASSWORD') ?: 'your-app-password');
+define('SMTP_HOST', 'smtp.gmail.com');
+define('SMTP_PORT', 587);
+define('SMTP_USER', 'admin@morisentreprises.com');
+define('SMTP_PASSWORD', 'Sirgeorge.12');
 
 // Admin Configuration
-define('ADMIN_EMAIL', getenv('ADMIN_EMAIL') ?: 'admin@moris.co.ke');
+define('ADMIN_EMAIL', 'admin@morisentreprises.com');
 
 // Ensure we're using UTC timezone
 date_default_timezone_set('UTC');

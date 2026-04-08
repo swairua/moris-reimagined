@@ -167,7 +167,7 @@ export function trackPageView(pageData?: Record<string, any>) {
       page_url: window.location.href,
       ...eventData,
     };
-    navigator.sendBeacon('/api/tracking/pixel', JSON.stringify(trackingData));
+    navigator.sendBeacon('/api.php/tracking/pixel', JSON.stringify(trackingData));
   }
 }
 
@@ -206,7 +206,7 @@ export function trackEmailInteraction(action: 'open' | 'click', trackingData?: R
 
   // Send to backend
   if (navigator.sendBeacon) {
-    navigator.sendBeacon('/api/tracking/pixel', JSON.stringify(eventData));
+    navigator.sendBeacon('/api.php/tracking/pixel', JSON.stringify(eventData));
   }
 }
 
