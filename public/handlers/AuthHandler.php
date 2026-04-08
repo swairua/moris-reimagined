@@ -32,11 +32,21 @@ class AuthHandler {
             $email = trim($input['email']);
             $password = $input['password'];
 
-            // Get user from database
-            $user = $this->db->fetchOne(
-                'SELECT id, email, password_hash, name FROM users WHERE email = ? AND status = ?',
-                [$email, 'active']
-            );
+            $conn = $this->db->getConnection();
+            $stmt = $conn->prepare('SELECT id, email, password_hash, name FROM users WHERE email = ? AND status = ? LIMIT 1');
+            $status = 'active';
+            $stmt->bind_param('ss', $email, $status);
+            $stmt->execute();
+
+            $result = $stmt->get_result();
+
+            if ($result && $result->num_rows > 0) {
+                $user = $result->fetch_assoc();
+            } else {
+                $user = null;
+            }
+
+            $stmt->close();
 
             if (!$user) {
                 error_log(sprintf('[auth] Login failed: user not found for email=%s', $email));
