@@ -292,8 +292,61 @@ async function prerender() {
     console.error(`Error generating sitemap: ${error.message}`);
   }
 
+  // -------------------------------------------------------
+  // Post-build: copy self-contained api.php, clean up modular PHP files,
+  // ensure uploads directory exists
+  // -------------------------------------------------------
+  try {
+    const rootApiPhp = path.join(__dirname, "../api.php");
+    const distApiPhp = path.join(distDir, "api.php");
+    if (fs.existsSync(rootApiPhp)) {
+      fs.copyFileSync(rootApiPhp, distApiPhp);
+      console.log("[deploy] Copied api.php → dist/api.php");
+    }
+
+    // Remove modular PHP files left behind by public/ copy (no longer needed)
+    const modularFiles = [
+      "config.php", "Database.php", "AuthMiddleware.php", "Auth.php",
+      "AuthHandler.php", "Campaign.php", "CampaignHandler.php",
+      "Customer.php", "CustomerHandler.php", "EmailService.php",
+      "Lead.php", "LeadHandler.php", "LeadScorer.php", "Logger.php",
+      "ProductHandler.php", "TrackingHandler.php", "TrackingPixel.php",
+      "setup-admin.php", ".env.example", "migrations.sql", "placeholder.svg",
+    ];
+    for (const file of modularFiles) {
+      const fp = path.join(distDir, file);
+      if (fs.existsSync(fp)) {
+        fs.unlinkSync(fp);
+      }
+    }
+
+    // Remove modular directories
+    const modularDirs = ["api", "handlers", "models"];
+    for (const dir of modularDirs) {
+      const dp = path.join(distDir, dir);
+      if (fs.existsSync(dp)) {
+        fs.rmSync(dp, { recursive: true, force: true });
+      }
+    }
+
+    // Ensure uploads subdirectories exist
+    const uploadDirs = ["products", "campaigns", "documents"];
+    for (const sub of uploadDirs) {
+      const ud = path.join(distDir, "uploads", sub);
+      if (!fs.existsSync(ud)) {
+        fs.mkdirSync(ud, { recursive: true });
+      }
+    }
+
+    console.log("[deploy] Cleaned up modular PHP files, uploads ready.");
+  } catch (error) {
+    console.error(`[deploy] Warning: ${error.message}`);
+  }
+
   console.log(`\nPrerendering complete! Generated ${routes.length} static pages.`);
 }
+
+const __root = path.resolve(__dirname, "..");
 
 prerender().catch((error) => {
   console.error("Fatal error during prerendering:", error);
