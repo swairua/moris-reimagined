@@ -64,14 +64,14 @@
     <link rel="preload" href="/src/assets/logo.png" as="image" />
     <link rel="preload" href="/src/assets/hero-lab.jpg" as="image" />
 
-    <!-- Schema.org Structured Data -->
+    <!-- Organization Schema - Complete -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "Moris Enterprises",
-      "alternateName": "Moris Enterprises Ltd",
-      "description": "Leading supplier of laboratory chemicals, medical instruments, biotechnology equipment, and diagnostic tools in Kenya. Quality products and professional services since 2010.",
+      "alternateName": ["Moris One Enterprises", "Moris Enterprises Ltd"],
+      "description": "Leading supplier of laboratory chemicals, medical instruments, biotechnology equipment, and diagnostic tools in Kenya. Quality products and professional services since 2010. Official Palintest distributor.",
       "url": "https://morisentreprises.com",
       "logo": {
         "@type": "ImageObject",
@@ -81,81 +81,200 @@
       },
       "image": "https://morisentreprises.com/src/assets/logo.png",
       "sameAs": [],
-      "areaServed": "KE",
-      "priceRange": "$$",
+      "areaServed": [{
+        "@type": "Country",
+        "name": "Kenya"
+      }],
+      "slogan": "Quality Laboratory Solutions for Your Business",
+      "priceRange": "$-$$$",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "KE",
         "addressRegion": "Nairobi",
         "streetAddress": "Nairobi, Kenya"
       },
-      "contactPoint": {
+      "contactPoint": [{
         "@type": "ContactPoint",
         "contactType": "Customer Support",
         "telephone": "+254-733-137-332",
         "email": "info@morisenterprises.com",
-        "contactOption": "TollFree"
+        "availableLanguage": ["en"],
+        "areaServed": "KE"
       },
+      {
+        "@type": "ContactPoint",
+        "contactType": "Sales",
+        "telephone": "+254-733-137-332",
+        "availableLanguage": ["en"]
+      }],
       "foundingDate": "2010",
-      "founder": {
-        "@type": "Person",
+      "foundingLocation": {
+        "@type": "Place",
+        "name": "Nairobi, Kenya"
+      },
+      "employee": {
+        "@type": "Organization",
         "name": "Moris Enterprises Team"
-      }
+      },
+      "knowsAbout": [
+        "Laboratory Chemicals",
+        "Medical Equipment",
+        "Biotechnology",
+        "Water Analysis",
+        "Quality Control",
+        "Diagnostic Instruments",
+        "Palintest"
+      ]
     }
     </script>
 
-    <!-- LocalBusiness Schema -->
+    <!-- LocalBusiness Schema - Enhanced -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Moris Enterprises",
       "image": "https://morisentreprises.com/src/assets/logo.png",
-      "description": "Laboratory chemicals and medical equipment supplier",
+      "description": "Leading supplier of laboratory chemicals, medical equipment, biotechnology supplies and diagnostic instruments in Kenya. Official Palintest distributor.",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "KE",
-        "addressRegion": "Nairobi"
+        "addressRegion": "Nairobi",
+        "streetAddress": "Nairobi, Kenya"
       },
       "telephone": "+254-733-137-332",
+      "email": "info@morisenterprises.com",
       "url": "https://morisentreprises.com",
-      "priceRange": "$$",
-      "areaServed": "KE"
+      "priceRange": "$-$$$",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Kenya"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "22:00"
+      },
+      "sameAs": [],
+      "knowsAbout": [
+        "Laboratory Equipment",
+        "Medical Supplies",
+        "Biotechnology",
+        "Palintest Water Testing"
+      ],
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "100",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
     }
     </script>
 
-    <!-- Product Schema (for aggregated products) -->
+    <!-- Product Schema (for aggregated products) - Enhanced -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Product",
       "name": "Laboratory Chemicals and Equipment",
+      "description": "Comprehensive range of laboratory chemicals, equipment, and medical supplies for research, testing, and quality control applications.",
       "brand": {
         "@type": "Brand",
+        "name": "Moris Enterprises",
+        "url": "https://morisentreprises.com"
+      },
+      "manufacturer": {
+        "@type": "Organization",
         "name": "Moris Enterprises"
       },
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.8",
-        "ratingCount": "100"
+        "ratingCount": "100",
+        "bestRating": "5",
+        "worstRating": "1"
       },
       "offers": {
         "@type": "AggregateOffer",
         "priceCurrency": "KES",
-        "priceRange": "1000-500000"
-      }
+        "priceRange": "1000-500000",
+        "availability": "https://schema.org/InStock",
+        "url": "https://morisentreprises.com"
+      },
+      "category": [
+        "Laboratory Chemicals",
+        "Laboratory Equipment",
+        "Medical Equipment",
+        "Biotechnology"
+      ]
     }
     </script>
 
-    <!-- ContactPoint Schema with Form -->
+    <!-- FAQPage Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "ContactPoint",
-      "contactType": "Customer Support",
-      "telephone": "+254-733-137-332",
-      "email": "info@morisenterprises.com",
-      "availableLanguage": ["en"]
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What laboratory equipment does Moris Enterprises supply?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Moris Enterprises supplies a comprehensive range of laboratory chemicals, equipment, and medical supplies including chromatography consumables, water testing equipment, microbiology media, quality control instruments, filtration systems, and Palintest water analysis products."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Are you an official Palintest distributor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, Moris Enterprises is an official Palintest distributor in Kenya, offering complete Palintest water testing kits, photometers, and reagents for water quality analysis."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What areas of Kenya do you serve?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We serve customers throughout Kenya with headquarters in Nairobi. We provide delivery services and can fulfill orders from research institutions, healthcare facilities, manufacturing industries, and laboratories across the country."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I request a quotation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You can request a quotation by contacting us via WhatsApp at +254 733 137 332, email at info@morisenterprises.com, or using our online contact form. We provide competitive pricing and fast response times."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How long has Moris Enterprises been in business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Moris Enterprises was established in 2010 and has over 14 years of experience in supplying laboratory chemicals, equipment, and medical supplies in Kenya."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://morisentreprises.com/"
+        }
+      ]
     }
     </script>
 

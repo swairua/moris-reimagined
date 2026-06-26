@@ -10,6 +10,12 @@ interface FAQItem {
   answer: string;
 }
 
+interface ServiceItem {
+  name: string;
+  description: string;
+  areaServed?: string[];
+}
+
 interface PageMetaProps {
   title: string;
   description: string;
@@ -24,6 +30,7 @@ interface PageMetaProps {
   faqs?: FAQItem[];
   ogLocale?: string;
   robots?: string;
+  services?: ServiceItem[];
 }
 
 export const usePageMeta = ({
@@ -40,6 +47,7 @@ export const usePageMeta = ({
   faqs,
   ogLocale = "en_KE",
   robots,
+  services,
 }: PageMetaProps) => {
   useEffect(() => {
     // Set document title
@@ -213,5 +221,41 @@ export const usePageMeta = ({
       }
     }
 
-  }, [title, description, keywords, image, type, canonical, breadcrumbs, author, publishedDate, modifiedDate, faqs, ogLocale]);
+    // Add Service schema
+    if (services && services.length > 0) {
+      const servicesSchema = {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        itemListElement: services.map((service, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          item: {
+            "@type": "Service",
+            name: service.name,
+            description: service.description,
+            provider: {
+              "@type": "Organization",
+              name: "Moris Enterprises",
+              url: "https://morisentreprises.com",
+            },
+            ...(service.areaServed && {
+              areaServed: service.areaServed,
+            }),
+          },
+        })),
+      };
+
+      let servicesScript = document.querySelector('script[data-services-meta]');
+      if (servicesScript) {
+        servicesScript.textContent = JSON.stringify(servicesSchema);
+      } else {
+        servicesScript = document.createElement("script");
+        servicesScript.type = "application/ld+json";
+        servicesScript.setAttribute("data-services-meta", "true");
+        servicesScript.textContent = JSON.stringify(servicesSchema);
+        document.head.appendChild(servicesScript);
+      }
+    }
+
+  }, [title, description, keywords, image, type, canonical, breadcrumbs, author, publishedDate, modifiedDate, faqs, ogLocale, services]);
 };

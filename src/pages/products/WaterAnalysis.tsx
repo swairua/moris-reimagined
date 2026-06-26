@@ -143,6 +143,28 @@ const WaterAnalysis = () => {
       { name: "Products", url: "/#services" },
       { name: "Water Analysis", url: "/products/water-analysis" },
     ],
+    faqs: [
+      {
+        question: "What water testing equipment do you supply?",
+        answer: "We supply comprehensive water testing solutions including Palintest photometers and tablet tests, HACH laboratory instruments and analyzers, portable testing meters, microbiological testing kits, and reagents for drinking water, wastewater, and industrial applications."
+      },
+      {
+        question: "Are you an authorized distributor of Palintest and HACH?",
+        answer: "Yes, we are official authorized distributors of both Palintest and HACH water testing products in Kenya, ensuring genuine products with full manufacturer warranty and technical support."
+      },
+      {
+        question: "What types of water can be tested?",
+        answer: "Our equipment is suitable for testing drinking water, swimming pool water, spa water, wastewater, environmental water, industrial process water, and other water systems that require quality monitoring."
+      },
+      {
+        question: "Do you provide training on equipment operation?",
+        answer: "We can provide guidance on equipment use and operation. Contact us for specific training requirements. We also provide technical support and documentation for all products."
+      },
+      {
+        question: "What is the delivery time for water testing equipment?",
+        answer: "Delivery times vary based on product availability. Contact us via WhatsApp at +254 733 137 332 for current stock status and estimated delivery timelines."
+      }
+    ]
   });
 
   return (

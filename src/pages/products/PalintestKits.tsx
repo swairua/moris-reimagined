@@ -65,6 +65,24 @@ const PalintestKits = () => {
       { name: "Products", url: "/#services" },
       { name: "Palintest Kits", url: "/products/palintest-kits" },
     ],
+    faqs: [
+      {
+        question: "What Palintest products are available?",
+        answer: "We offer a complete range of Palintest water testing products including photometers, test kits for pools and spas, drinking water analysis equipment, environmental water testing kits, and complete testing systems."
+      },
+      {
+        question: "Are these authentic Palintest products?",
+        answer: "Yes, Moris Enterprises is an official authorized distributor of Palintest products, ensuring all products are genuine and come with full manufacturer warranty and support."
+      },
+      {
+        question: "What applications are Palintest kits suitable for?",
+        answer: "Palintest products are suitable for pool and spa testing, drinking water quality analysis, wastewater treatment monitoring, industrial water testing, and environmental water quality assessment."
+      },
+      {
+        question: "How quickly can you deliver?",
+        answer: "We provide fast delivery throughout Kenya. Contact us via WhatsApp at +254 733 137 332 for current stock availability and delivery timelines."
+      }
+    ]
   });
 
   return (
