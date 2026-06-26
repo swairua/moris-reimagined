@@ -17,6 +17,60 @@ const Index = () => {
     breadcrumbs: [
       { name: "Home", url: "https://morisentreprises.com/" },
     ],
+    services: [
+      {
+        name: "Laboratory Chemicals Supply",
+        description: "High-quality laboratory and industrial chemicals including biochemicals, fine chemicals, enzyme substrates, antibiotics, buffers, and specialty chemicals for research and testing.",
+        areaServed: ["Kenya"]
+      },
+      {
+        name: "Laboratory Equipment",
+        description: "Professional laboratory instruments including spectrophotometers, atomic absorption spectrometers, flame photometers, and quality control equipment.",
+        areaServed: ["Kenya"]
+      },
+      {
+        name: "Water Testing & Analysis",
+        description: "Complete water testing solutions including Palintest kits, photometers, reagents, and professional water quality analysis equipment from leading manufacturers.",
+        areaServed: ["Kenya"]
+      },
+      {
+        name: "Biotechnology & Microbiology Supplies",
+        description: "Microbiology media, prepared culture plates, biological media bases, and biotechnology supplies for research institutions and laboratories.",
+        areaServed: ["Kenya"]
+      },
+      {
+        name: "Medical Equipment Supply",
+        description: "Professional medical equipment and instruments for healthcare facilities including analyzers, extractors, and diagnostic instruments.",
+        areaServed: ["Kenya"]
+      },
+      {
+        name: "Filtration & Water Treatment",
+        description: "Advanced filtration systems, water filters, deionized water systems, UV sterilizers, and wastewater treatment solutions.",
+        areaServed: ["Kenya"]
+      }
+    ],
+    faqs: [
+      {
+        question: "What laboratory equipment does Moris Enterprises supply?",
+        answer: "Moris Enterprises supplies a comprehensive range of laboratory chemicals, equipment, and medical supplies including chromatography consumables, water testing equipment, microbiology media, quality control instruments, filtration systems, and Palintest water analysis products."
+      },
+      {
+        question: "Are you an official Palintest distributor?",
+        answer: "Yes, Moris Enterprises is an official Palintest distributor in Kenya, offering complete Palintest water testing kits, photometers, and reagents for water quality analysis."
+      },
+      {
+        question: "What areas of Kenya do you serve?",
+        answer: "We serve customers throughout Kenya with headquarters in Nairobi. We provide delivery services and can fulfill orders from research institutions, healthcare facilities, manufacturing industries, and laboratories across the country."
+      },
+      {
+        question: "How can I request a quotation?",
+        answer: "You can request a quotation by contacting us via WhatsApp at +254 733 137 332, email at info@morisenterprises.com, or using our online contact form. We provide competitive pricing and fast response times."
+      },
+      {
+        question: "How long has Moris Enterprises been in business?",
+        answer: "Moris Enterprises was established in 2010 and has over 14 years of experience in supplying laboratory chemicals, equipment, and medical supplies in Kenya."
+      }
+    ],
   });
 
   return (

@@ -232,3 +232,153 @@ export const injectCollectionPageSchema = (
   script.textContent = JSON.stringify(schema);
   document.head.appendChild(script);
 };
+
+/**
+ * Add WebPage schema with specific meta information
+ */
+export const injectWebPageSchema = (
+  title: string,
+  description: string,
+  url: string,
+  image?: string,
+  datePublished?: string,
+  dateModified?: string
+): void => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description: description,
+    url: url,
+    ...(image && { image: image }),
+    ...(datePublished && { datePublished: datePublished }),
+    ...(dateModified && { dateModified: dateModified }),
+  };
+
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.setAttribute("data-webpage-schema", "true");
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+};
+
+/**
+ * Add FAQ schema for frequently asked questions
+ */
+export const injectFAQSchema = (
+  faqs: Array<{ question: string; answer: string }>
+): void => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.setAttribute("data-faq-schema", "true");
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+};
+
+/**
+ * Add ImageObject schema for images with metadata
+ */
+export const injectImageSchema = (
+  url: string,
+  name: string,
+  description?: string,
+  width?: number,
+  height?: number
+): void => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "ImageObject",
+    url: url,
+    name: name,
+    ...(description && { description: description }),
+    ...(width && { width: width }),
+    ...(height && { height: height }),
+  };
+
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+};
+
+/**
+ * Add AggregateOffer schema for product listings with multiple offers
+ */
+export const injectAggregateOfferSchema = (
+  name: string,
+  description: string,
+  priceCurrency: string = "KES",
+  lowPrice?: string,
+  highPrice?: string,
+  offerCount?: number
+): void => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: name,
+    description: description,
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: priceCurrency,
+      ...(lowPrice && { lowPrice: lowPrice }),
+      ...(highPrice && { highPrice: highPrice }),
+      ...(offerCount && { offerCount: offerCount }),
+      availability: "https://schema.org/InStock",
+    },
+  };
+
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.setAttribute("data-aggregate-offer", "true");
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+};
+
+/**
+ * Add Service schema for business services
+ */
+export const injectServiceSchema = (
+  name: string,
+  description: string,
+  url: string,
+  provider: string = "Moris Enterprises",
+  areaServed?: string[]
+): void => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: name,
+    description: description,
+    url: url,
+    provider: {
+      "@type": "Organization",
+      name: provider,
+      url: "https://morisentreprises.com",
+    },
+    ...(areaServed && {
+      areaServed: areaServed.map((area) => ({
+        "@type": "Place",
+        name: area,
+      })),
+    }),
+  };
+
+  const script = document.createElement("script");
+  script.type = "application/ld+json";
+  script.setAttribute("data-service-schema", "true");
+  script.textContent = JSON.stringify(schema);
+  document.head.appendChild(script);
+};
