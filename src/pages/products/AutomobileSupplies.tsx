@@ -8,6 +8,7 @@ import { openProductQuotation } from "@/lib/whatsapp";
 import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { automobileProducts } from "@/data/automobileProducts";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 const AutomobileSupplies = () => {
   const navigate = useNavigate();
@@ -60,14 +61,12 @@ const AutomobileSupplies = () => {
   const ProductCard = ({ product }: { product: typeof automobileProducts[0] }) => (
     <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col flex-shrink-0 w-full sm:w-auto">
       <div className="relative w-full h-48 bg-muted overflow-hidden">
-        <img
+        <OptimizedImage
           src={product.image}
           alt={product.imageAlt || `${product.name} - KOMU coil springs and automotive suspension parts`}
           className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
           width={800}
           height={600}
-          loading="lazy"
-          decoding="async"
         />
       </div>
       <div className="p-6 flex flex-col flex-grow">

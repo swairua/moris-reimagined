@@ -1,5 +1,6 @@
 import logo from "@/assets/logo.png";
 import { Mail, Phone, MapPin } from "lucide-react";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 export const Footer = () => {
   const scrollToSection = (id: string) => {
@@ -15,12 +16,10 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img
+              <OptimizedImage
                 src={logo}
                 alt="Moris Enterprises - Laboratory Chemicals & Medical Equipment Supplier"
                 className="h-16 w-16"
-                loading="lazy"
-                decoding="async"
                 width={64}
                 height={64}
               />

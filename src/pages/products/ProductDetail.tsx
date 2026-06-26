@@ -10,6 +10,7 @@ import { useAnalytics } from "@/hooks/use-analytics";
 import { openProductQuotation } from "@/lib/whatsapp";
 import { getProductBySlug, automobileProducts } from "@/data/automobileProducts";
 import NotFound from "@/pages/NotFound";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 const ProductDetail = () => {
   const { productId } = useParams<{ productId: string }>();
@@ -107,14 +108,13 @@ const ProductDetail = () => {
           {/* Product Image */}
           <div className="flex items-center justify-center">
             <div className="relative w-full h-96 bg-muted rounded-lg overflow-hidden">
-              <img
+              <OptimizedImage
                 src={product.image}
                 alt={product.imageAlt || `${product.name} - Product image`}
                 className="w-full h-full object-cover"
                 width={600}
                 height={400}
-                loading="eager"
-                decoding="async"
+                priority={true}
               />
             </div>
           </div>
@@ -309,14 +309,12 @@ const ProductDetail = () => {
                   className="overflow-hidden hover:shadow-lg transition-all duration-300 flex flex-col"
                 >
                   <div className="relative w-full h-40 bg-muted overflow-hidden">
-                    <img
+                    <OptimizedImage
                       src={relatedProduct.image}
                       alt={relatedProduct.imageAlt || `${relatedProduct.name} - Related product`}
                       className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                       width={600}
                       height={400}
-                      loading="lazy"
-                      decoding="async"
                     />
                   </div>
                   <div className="p-4 flex flex-col flex-grow">

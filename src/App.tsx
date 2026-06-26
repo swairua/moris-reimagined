@@ -6,6 +6,7 @@ import { ScrollToTop } from "@/components/ScrollToTop";
 import { useAnalyticsPageTracking } from "@/hooks/use-analytics";
 import { AuthProvider } from "@/contexts/AuthContext";
 import { ProtectedRoute } from "@/components/ProtectedRoute";
+import { Redirect } from "@/components/Redirect";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import MedicalEquipment from "./pages/products/MedicalEquipment";
@@ -73,6 +74,22 @@ const AppRoutes = () => {
         <Route path="/admin/campaigns" element={<ProtectedRoute><CampaignManager /></ProtectedRoute>} />
         <Route path="/admin/products" element={<ProtectedRoute><ProductManager /></ProtectedRoute>} />
         <Route path="/admin/analytics" element={<ProtectedRoute><AnalyticsDashboard /></ProtectedRoute>} />
+
+        {/* 301 Redirects for deprecated/alternative URLs */}
+        <Route path="/products/chemicals" element={<Redirect to="/products/laboratory-chemicals" />} />
+        <Route path="/products/equipment" element={<Redirect to="/products/medical-equipment" />} />
+        <Route path="/products/lab-supplies" element={<Redirect to="/products/laboratory-chemicals" />} />
+        <Route path="/products/diagnostic-equipment" element={<Redirect to="/products/medical-equipment" />} />
+        <Route path="/products/biotechnology-equipment" element={<Redirect to="/products/microbiology-biotechnology" />} />
+        <Route path="/products/microbiology" element={<Redirect to="/products/microbiology-biotechnology" />} />
+        <Route path="/products/water-treatment" element={<Redirect to="/products/water-analysis" />} />
+        <Route path="/products/testing-equipment" element={<Redirect to="/products/laboratory-testing" />} />
+        <Route path="/products/safety-equipment" element={<Redirect to="/products/safety-products" />} />
+        <Route path="/products/filtration-systems" element={<Redirect to="/products/waste-water-filtration" />} />
+        <Route path="/products/lab-tools" element={<Redirect to="/products/lab-equipment" />} />
+        <Route path="/products/chemical-reagents" element={<Redirect to="/products/laboratory-chemicals" />} />
+        <Route path="/products/auto-supplies" element={<Redirect to="/products/automobile-supplies" />} />
+        <Route path="/products/automobile" element={<Redirect to="/products/automobile-supplies" />} />
 
         {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
         <Route path="*" element={<NotFound />} />
