@@ -8,6 +8,7 @@ import {
 import { Menu, X, ChevronDown, HeartPulse, Microscope, Beaker, FlaskConical, Droplet, TestTube, Shield, Waves, Pipette, Settings } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useAnalytics } from "@/hooks/use-analytics";
+import { OptimizedImage } from "@/components/OptimizedImage";
 import logo from "@/assets/logo.png";
 
 export const Navigation = () => {
@@ -76,12 +77,11 @@ export const Navigation = () => {
             }}
             className="flex items-center gap-2 animate-fade-in cursor-pointer hover:opacity-80 transition-opacity"
           >
-            <img
+            <OptimizedImage
               src={logo}
               alt="Moris Enterprises - Laboratory Chemicals & Medical Equipment Supplier"
               className="h-16 w-16 object-contain"
-              loading="eager"
-              decoding="async"
+              priority
               width={64}
               height={64}
             />

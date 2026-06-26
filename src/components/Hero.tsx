@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState, useEffect } from "react";
 import { useAnalytics } from "@/hooks/use-analytics";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 const sliderImages = [
   {
@@ -53,12 +54,11 @@ export const Hero = () => {
       {/* Background Image Slider */}
       <div className="absolute inset-0 z-0">
         {sliderImages.map((image, index) => (
-          <img
+          <OptimizedImage
             key={index}
             src={image.url}
             alt={image.alt}
-            loading={index === 0 ? "eager" : "lazy"}
-            decoding="async"
+            priority={index === 0}
             width={1920}
             height={1080}
             className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${

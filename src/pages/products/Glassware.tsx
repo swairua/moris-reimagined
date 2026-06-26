@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { openProductQuotation } from "@/lib/whatsapp";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 const products = [
   {
@@ -75,14 +76,12 @@ const Glassware = () => {
             className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
           >
             <div className="relative w-full h-48 overflow-hidden bg-muted">
-              <img
+              <OptimizedImage
                 src={product.image}
                 alt={`${product.name} - Laboratory glassware from Moris Enterprises`}
                 className="w-full h-full object-cover"
                 width={800}
                 height={600}
-                loading="lazy"
-                decoding="async"
               />
             </div>
             <div className="p-6 flex flex-col h-full">

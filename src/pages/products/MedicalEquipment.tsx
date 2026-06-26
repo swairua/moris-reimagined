@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { openProductQuotation } from "@/lib/whatsapp";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 const products = [
   {
@@ -198,11 +199,9 @@ const MedicalEquipment = () => {
           >
             {product.image && (
               <div className="relative w-full h-48 overflow-hidden bg-muted">
-                <img
+                <OptimizedImage
                   src={product.image}
                   alt={`${product.name} - Medical equipment from Moris Enterprises Kenya`}
-                  loading="lazy"
-                  decoding="async"
                   width={800}
                   height={600}
                   className="w-full h-full object-cover"

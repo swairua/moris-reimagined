@@ -2,6 +2,7 @@ import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
 import { useState } from "react";
 import { usePageMeta } from "@/hooks/use-page-meta";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 const galleryImages = [
   {
@@ -69,14 +70,12 @@ const Gallery = () => {
                   className="group relative overflow-hidden rounded-lg cursor-pointer h-80"
                   onClick={() => setSelectedImage(image.id)}
                 >
-                  <img
+                  <OptimizedImage
                     src={image.url}
                     alt={image.alt}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                     width={800}
                     height={640}
-                    loading="lazy"
-                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="w-full p-4 bg-gradient-to-t from-black/80 to-transparent">
@@ -119,14 +118,13 @@ const Gallery = () => {
             className="relative max-w-4xl max-h-[90vh] w-full"
             onClick={(e) => e.stopPropagation()}
           >
-            <img
-              src={galleryImages.find((img) => img.id === selectedImage)?.url}
+            <OptimizedImage
+              src={galleryImages.find((img) => img.id === selectedImage)?.url || ""}
               alt={`${galleryImages.find((img) => img.id === selectedImage)?.title} - Moris Enterprises laboratory gallery`}
               className="w-full h-full object-contain"
               width={1200}
               height={800}
-              loading="eager"
-              decoding="async"
+              priority
             />
             <p className="text-white text-center mt-4">
               {galleryImages.find((img) => img.id === selectedImage)?.title}

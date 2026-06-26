@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { MessageCircle } from "lucide-react";
 import { usePageMeta } from "@/hooks/use-page-meta";
 import { openProductQuotation } from "@/lib/whatsapp";
+import { OptimizedImage } from "@/components/OptimizedImage";
 
 const products = [
   {
@@ -96,14 +97,12 @@ const WasteWaterFiltration = () => {
               className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex flex-col"
             >
               <div className="w-full h-48 bg-muted overflow-hidden flex items-center justify-center">
-                <img
+                <OptimizedImage
                   src={product.image}
                   alt={`${product.name} - Water filtration equipment for wastewater treatment`}
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   width={800}
                   height={600}
-                  loading="lazy"
-                  decoding="async"
                 />
               </div>
               <div className="p-6 flex-1 flex flex-col">
