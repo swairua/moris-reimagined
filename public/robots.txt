@@ -1,27 +1,51 @@
 # Robots.txt for Moris Enterprises
-# Allow all search engines to crawl the site
+# Allow search engines to crawl public pages
 
 User-agent: *
 Allow: /
+Allow: /products/
+Allow: /gallery
+Allow: /
 Disallow: /admin/
-Disallow: /.env
+Disallow: /api/
+Disallow: /handlers/
+Disallow: /models/
+Disallow: /uploads/
 Disallow: /private/
-Disallow: */private/*
+Disallow: /.env
+Disallow: /.env.example
+Disallow: /config.php
+Disallow: /setup-admin.php
+Disallow: /Auth.php
+Disallow: /AuthHandler.php
+Disallow: /AuthMiddleware.php
+Disallow: /Database.php
+Disallow: /EmailService.php
+Disallow: /Logger.php
+Disallow: /TrackingHandler.php
+Disallow: /TrackingPixel.php
+Disallow: /*.php$
+Disallow: /node_modules/
+Disallow: /dist/
+Disallow: /src/
+Disallow: /public/
+Disallow: /scripts/
 
-# Specific rules for search engines
+# Specific rules for major search engines
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0
 
 User-agent: Bingbot
 Allow: /
-
-# Crawl-delay to be respectful
 Crawl-delay: 1
 
-# Sitemaps
-Sitemap: https://morisenterprises.com/sitemap.xml
+# Respectful crawl-delay for other bots
+User-agent: *
+Crawl-delay: 1
+Request-rate: 30/60
 
-# Block bad bots
+# Block malicious and aggressive bots
 User-agent: MJ12bot
 Disallow: /
 
@@ -30,3 +54,18 @@ Disallow: /
 
 User-agent: SemrushBot
 Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: Yandex
+Allow: /
+
+User-agent: Baidu
+Allow: /
+
+# Primary sitemap
+Sitemap: https://morisenterprises.com/sitemap.xml

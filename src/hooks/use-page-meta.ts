@@ -109,17 +109,16 @@ export const usePageMeta = ({
       updateTwitterTag("twitter:image", image);
     }
 
-    // Update canonical URL
-    if (canonical) {
-      let canonicalLink = document.querySelector('link[rel="canonical"]');
-      if (canonicalLink) {
-        canonicalLink.setAttribute("href", canonical);
-      } else {
-        canonicalLink = document.createElement("link");
-        canonicalLink.setAttribute("rel", "canonical");
-        canonicalLink.setAttribute("href", canonical);
-        document.head.appendChild(canonicalLink);
-      }
+    // Update canonical URL (always set, never remove in SPA)
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    const canonicalHref = canonical || `https://morisenterprises.com${window.location.pathname}`;
+    if (canonicalLink) {
+      canonicalLink.setAttribute("href", canonicalHref);
+    } else {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      canonicalLink.setAttribute("href", canonicalHref);
+      document.head.appendChild(canonicalLink);
     }
 
     // Add breadcrumb schema

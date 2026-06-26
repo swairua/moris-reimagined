@@ -104,6 +104,102 @@ const routesToPrerender = [
     keywords:
       "laboratory chemicals, reagents, chemical supplies, lab reagents Kenya",
   },
+  {
+    path: "/products/microbiology-biotechnology",
+    title: "Microbiology & Biotechnology Equipment | Professional Lab Supplier Kenya",
+    description:
+      "Advanced microbiology and biotechnology equipment for research institutions and laboratories in Kenya. Quality assurance and competitive pricing.",
+    keywords:
+      "microbiology equipment, biotechnology, lab equipment, research supplies, Kenya",
+  },
+  {
+    path: "/products/glassware",
+    title: "Laboratory Glassware | Quality Lab Glassware Supplier Kenya",
+    description:
+      "Premium laboratory glassware including beakers, flasks, pipettes, and more for research and testing. Professional-grade supplies from Moris Enterprises.",
+    keywords:
+      "laboratory glassware, lab glassware, beakers, flasks, pipettes, Kenya",
+  },
+  {
+    path: "/products/chromatography-consumables",
+    title: "Chromatography Consumables | Lab Testing Supplies Kenya",
+    description:
+      "Complete chromatography consumables and testing supplies for analytical laboratories. Professional-grade products from Moris Enterprises.",
+    keywords:
+      "chromatography, consumables, lab supplies, analytical testing, Kenya",
+  },
+  {
+    path: "/products/equipment-quality-control",
+    title: "Quality Control Equipment | Professional Testing Solutions Kenya",
+    description:
+      "Quality control and testing equipment for laboratories and manufacturing. Ensure product quality with professional-grade equipment from Moris Enterprises.",
+    keywords:
+      "quality control, testing equipment, lab equipment, Kenya",
+  },
+  {
+    path: "/products/water-analysis",
+    title: "Water Analysis Equipment & Reagents | Quality Testing Supplier Kenya",
+    description:
+      "Complete water analysis equipment and reagents for testing drinking water, wastewater, and industrial water quality.",
+    keywords:
+      "water analysis, water testing, water quality, analysis equipment, Kenya",
+  },
+  {
+    path: "/products/laboratory-testing",
+    title: "Laboratory Testing Equipment | Professional Testing Supplies Kenya",
+    description:
+      "Comprehensive laboratory testing equipment and supplies for scientific research and quality assurance.",
+    keywords:
+      "laboratory testing, testing equipment, lab supplies, research, Kenya",
+  },
+  {
+    path: "/products/safety-products",
+    title: "Safety Products & PPE | Lab Safety Equipment Kenya",
+    description:
+      "Complete range of safety products and personal protective equipment for laboratory workers and field technicians.",
+    keywords:
+      "safety products, PPE, personal protection, lab safety, Kenya",
+  },
+  {
+    path: "/products/waste-water-filtration",
+    title: "Waste Water Filtration Systems | Professional Water Treatment Kenya",
+    description:
+      "Advanced wastewater filtration and treatment systems for environmental compliance and water reuse.",
+    keywords:
+      "wastewater filtration, water filtration, treatment systems, Kenya",
+  },
+  {
+    path: "/products/palintest-kits",
+    title: "Palintest Water Testing Kits | Professional Analysis Kenya",
+    description:
+      "Professional Palintest water testing kits for comprehensive water quality analysis. Accurate and reliable testing solutions.",
+    keywords:
+      "Palintest, water testing, water analysis, test kits, Kenya",
+  },
+  {
+    path: "/products/lab-equipment",
+    title: "Lab Equipment | Professional Laboratory Instruments Kenya",
+    description:
+      "Complete laboratory equipment and instruments for research, testing, and quality control applications.",
+    keywords:
+      "laboratory equipment, lab instruments, testing equipment, Kenya",
+  },
+  {
+    path: "/products/filtration",
+    title: "Filtration Systems & Filters | Professional Lab Filtration Kenya",
+    description:
+      "Professional filtration systems and filter products for laboratory and industrial applications.",
+    keywords:
+      "filtration, filters, lab filtration, water filtration, Kenya",
+  },
+  {
+    path: "/products/laboratory-material-testing",
+    title: "Laboratory Material Testing Equipment | Quality Assurance Kenya",
+    description:
+      "Material testing equipment for analyzing and validating product quality and durability in laboratory settings.",
+    keywords:
+      "material testing, testing equipment, quality assurance, lab testing, Kenya",
+  },
   // Product detail pages for automobile supplies
   ...automobileProducts.map((product) => ({
     path: `/products/automobile-supplies/${product.id}`,
@@ -126,19 +222,22 @@ function generateSitemap() {
     sitemap.push(`    <loc>https://morisenterprises.com${route.path}</loc>`);
     sitemap.push(`    <lastmod>${currentDate}</lastmod>`);
 
-    // Set change frequency based on route type
+    // Set change frequency and priority based on route type
     if (route.path === '/') {
       sitemap.push(`    <changefreq>weekly</changefreq>`);
       sitemap.push(`    <priority>1.0</priority>`);
+    } else if (route.path === '/gallery') {
+      sitemap.push(`    <changefreq>monthly</changefreq>`);
+      sitemap.push(`    <priority>0.7</priority>`);
     } else if (route.path.includes('/products/automobile-supplies/')) {
       sitemap.push(`    <changefreq>monthly</changefreq>`);
-      sitemap.push(`    <priority>0.8</priority>`);
+      sitemap.push(`    <priority>0.75</priority>`);
     } else if (route.path.includes('/products/')) {
       sitemap.push(`    <changefreq>weekly</changefreq>`);
-      sitemap.push(`    <priority>0.9</priority>`);
+      sitemap.push(`    <priority>0.85</priority>`);
     } else {
       sitemap.push(`    <changefreq>monthly</changefreq>`);
-      sitemap.push(`    <priority>0.8</priority>`);
+      sitemap.push(`    <priority>0.7</priority>`);
     }
 
     sitemap.push(`  </url>`);
