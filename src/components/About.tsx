@@ -8,10 +8,10 @@ export const About = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
-              About Moris Enterprises
+              About Moris Entreprises
             </h2>
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              Moris One Enterprises is a company that was established in 2010 and its foundation is based on more than a decade long experience in this exciting field of scientific expertise, research, service, supply and distribution.
+              Moris One Entreprises is a company that was established in 2010 and its foundation is based on more than a decade long experience in this exciting field of scientific expertise, research, service, supply and distribution.
             </p>
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
               We supply a variety of consumables to manufacturing industries, Food Services, Beverage, Healthcare, Laboratory Reagents, Water-care, Mining, Cleaning as well as cosmetic chemicals. Our customer-centric philosophy puts each and every customer first and delivers what each client defines as value.
@@ -73,7 +73,7 @@ export const About = () => {
                     <span className="text-xs">✓</span>
                   </div>
                   <p className="text-primary-foreground/90">
-                    Serving small, medium and large Enterprises with dynamic solutions
+                    Serving small, medium and large Entreprises with dynamic solutions
                   </p>
                 </li>
               </ul>

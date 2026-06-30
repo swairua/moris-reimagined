@@ -165,7 +165,7 @@ const faqs = [
   },
   {
     question: "Are you an authorized Palintest distributor in Kenya?",
-    answer: "Yes, Moris Enterprises is an official authorized distributor of Palintest UK products in Kenya. We supply genuine Palintest equipment, reagents, and consumables with full manufacturer warranty and after-sales support.",
+    answer: "Yes, Moris Entreprises is an official authorized distributor of Palintest UK products in Kenya. We supply genuine Palintest equipment, reagents, and consumables with full manufacturer warranty and after-sales support.",
   },
   {
     question: "What water parameters can Palintest tablet tests measure?",
@@ -181,7 +181,7 @@ const faqs = [
   },
   {
     question: "Do you provide technical support and training for Palintest equipment?",
-    answer: "Yes, we provide full technical support, training, and after-sales service for all Palintest equipment purchased through Moris Enterprises. Our team is trained on installation, calibration, and troubleshooting.",
+    answer: "Yes, we provide full technical support, training, and after-sales service for all Palintest equipment purchased through Moris Entreprises. Our team is trained on installation, calibration, and troubleshooting.",
   },
   {
     question: "What Wagtech microbiological testing kits do you offer?",
@@ -201,7 +201,7 @@ const faqs = [
   },
   {
     question: "What warranty do you offer on Palintest photometers and analyzers?",
-    answer: "All genuine Palintest equipment purchased through Moris Enterprises comes with full manufacturer warranty. Lumiso photometers and Kemio analyzers include a standard 12-month warranty against manufacturing defects. Extended warranty options are available upon request.",
+    answer: "All genuine Palintest equipment purchased through Moris Entreprises comes with full manufacturer warranty. Lumiso photometers and Kemio analyzers include a standard 12-month warranty against manufacturing defects. Extended warranty options are available upon request.",
   },
   {
     question: "Do you offer pricing in Kenyan Shillings (KES)?",
@@ -221,7 +221,7 @@ const Palintest = () => {
       { name: "Palintest", url: "/palintest" },
     ],
     faqs: faqs,
-    author: "Moris Enterprises",
+    author: "Moris Entreprises",
     publishedDate: "2024-01-15",
     modifiedDate: new Date().toISOString().split("T")[0],
   });
@@ -230,7 +230,7 @@ const Palintest = () => {
     const distributorSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "Moris Enterprises",
+      "name": "Moris Entreprises",
       "description": "Official authorized distributor of Palintest UK in Kenya",
       "url": "https://morisentreprises.com",
       "distributor": {
@@ -314,7 +314,7 @@ const Palintest = () => {
           About Palintest Water Testing Solutions
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-4">
-          As the <strong>official authorized distributor of Palintest UK in Kenya</strong>, Moris Enterprises supplies the complete range of Palintest water testing and analysis equipment — from 300+ product SKUs covering photometers, reagents, tube tests, and microbiological kits. Palintest is a globally recognized leader in water quality analysis, known for their innovative Lumiso photometers, reliable DPD tablet tests, and comprehensive water testing solutions used across drinking water, wastewater, swimming pools, and environmental monitoring applications.
+          As the <strong>official authorized distributor of Palintest UK in Kenya</strong>, Moris Entreprises supplies the complete range of Palintest water testing and analysis equipment — from 300+ product SKUs covering photometers, reagents, tube tests, and microbiological kits. Palintest is a globally recognized leader in water quality analysis, known for their innovative Lumiso photometers, reliable DPD tablet tests, and comprehensive water testing solutions used across drinking water, wastewater, swimming pools, and environmental monitoring applications.
         </p>
         <p className="text-muted-foreground leading-relaxed mb-4">
           Our partnership with Palintest allows us to offer genuine products with full manufacturer warranty, technical support, and competitive pricing. From the advanced Lumiso series photometers to the extensive range of Palintest tablet tests covering 40+ individual parameters, we have the right solution for every water testing requirement.

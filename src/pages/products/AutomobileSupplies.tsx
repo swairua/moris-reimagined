@@ -164,7 +164,7 @@ const AutomobileSupplies = () => {
           Premium KOMU Coils Springs & Suspension Components for Kenya
         </h2>
         <p className="text-muted-foreground leading-relaxed">
-          Moris Enterprises is your trusted supplier of KOMU Coils Springs and professional-grade suspension components across Kenya.
+          Moris Entreprises is your trusted supplier of KOMU Coils Springs and professional-grade suspension components across Kenya.
           Our KOMU suspension coils are engineered for durability, reliability, and optimal vehicle performance. Whether you operate an
           automotive service center or manage a fleet, our KOMU coil springs deliver consistent quality and load-bearing performance
           for all vehicle types.
@@ -213,7 +213,7 @@ const AutomobileSupplies = () => {
           </div>
           <div>
             <h4 className="font-semibold text-foreground">How quickly can you deliver KOMU springs in Kenya?</h4>
-            <p className="text-muted-foreground mt-2">Moris Enterprises maintains stock of popular KOMU variants for fast delivery across Kenya.
+            <p className="text-muted-foreground mt-2">Moris Entreprises maintains stock of popular KOMU variants for fast delivery across Kenya.
             Request a quotation for your specific KOMU springs requirements and delivery timeline.</p>
           </div>
         </div>
@@ -227,7 +227,7 @@ const AutomobileSupplies = () => {
           Other Product Categories
         </h3>
         <p className="text-muted-foreground leading-relaxed mb-6">
-          Moris Enterprises supplies more than just automotive parts. Explore our comprehensive range of laboratory equipment and medical supplies:
+          Moris Entreprises supplies more than just automotive parts. Explore our comprehensive range of laboratory equipment and medical supplies:
         </p>
         <ul className="text-muted-foreground space-y-2 mb-6">
           <li>
@@ -244,7 +244,7 @@ const AutomobileSupplies = () => {
           </li>
         </ul>
         <p className="text-muted-foreground leading-relaxed">
-          Visit our <a href="/#services" className="text-primary hover:underline font-semibold">main products page</a> to explore all available product categories and services offered by Moris Enterprises.
+          Visit our <a href="/#services" className="text-primary hover:underline font-semibold">main products page</a> to explore all available product categories and services offered by Moris Entreprises.
         </p>
       </div>
     </ProductPageLayout>

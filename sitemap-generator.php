@@ -1,6 +1,6 @@
 <?php
 /**
- * Moris Enterprises — Automatic Sitemap Generator
+ * Moris Entreprises — Automatic Sitemap Generator
  *
  * Scans the website directory structure, finds all prerendered HTML pages,
  * and generates split XML sitemaps with proper priorities, lastmod dates,

@@ -78,7 +78,7 @@ export const Navigation = () => {
           >
             <img
               src={logo}
-              alt="Moris Enterprises - Laboratory Chemicals & Medical Equipment Supplier"
+              alt="Moris Entreprises - Laboratory Chemicals & Medical Equipment Supplier"
               className="h-16 w-16 object-contain"
               loading="eager"
               decoding="async"
@@ -88,7 +88,7 @@ export const Navigation = () => {
                 Moris
               </span>
               <span className="text-lg font-display font-bold text-primary leading-tight">
-                Enterprises
+                Entreprises
               </span>
             </div>
           </button>
@@ -197,7 +197,7 @@ export const Navigation = () => {
                 <div className="flex items-center gap-2">
                   <img
                     src={logo}
-                    alt="Moris Enterprises"
+                    alt="Moris Entreprises"
                     className="h-10 w-10 object-contain"
                   />
                   <span className="font-display font-bold text-foreground">Menu</span>

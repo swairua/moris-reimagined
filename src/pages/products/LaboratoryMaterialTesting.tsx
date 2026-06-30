@@ -164,7 +164,7 @@ const LaboratoryMaterialTesting = () => {
           Comprehensive Laboratory &amp; Material Testing Solutions
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-4">
-          Moris Enterprises supplies a comprehensive range of laboratory and material testing equipment for research institutions, clinical laboratories, educational facilities, and industrial quality control. From basic laboratory appliances to advanced analytical instruments, we provide solutions for every testing need.
+          Moris Entreprises supplies a comprehensive range of laboratory and material testing equipment for research institutions, clinical laboratories, educational facilities, and industrial quality control. From basic laboratory appliances to advanced analytical instruments, we provide solutions for every testing need.
         </p>
         
         <h3 className="text-2xl font-display font-bold text-foreground mt-6 mb-3">

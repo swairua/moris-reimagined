@@ -125,7 +125,7 @@ const EquipmentQualityControl = () => {
           Professional Quality Control &amp; Testing Equipment
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-4">
-          Moris Enterprises supplies precision instruments and equipment for quality control, laboratory testing, and environmental monitoring. Our range includes digital thermometers, water quality meters, pH analyzers, and specialized testing equipment for diverse applications.
+          Moris Entreprises supplies precision instruments and equipment for quality control, laboratory testing, and environmental monitoring. Our range includes digital thermometers, water quality meters, pH analyzers, and specialized testing equipment for diverse applications.
         </p>
         
         <h3 className="text-2xl font-display font-bold text-foreground mt-6 mb-3">

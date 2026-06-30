@@ -115,7 +115,7 @@ const Filtration = () => {
           Professional Filtration Solutions
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-4">
-          Moris Enterprises supplies complete filtration products and systems for analytical chemistry, environmental testing, pharmaceutical quality control, and research laboratories. Our extensive product range covers syringe filtration, vacuum filtration, membrane separation, and sample preparation.
+          Moris Entreprises supplies complete filtration products and systems for analytical chemistry, environmental testing, pharmaceutical quality control, and research laboratories. Our extensive product range covers syringe filtration, vacuum filtration, membrane separation, and sample preparation.
         </p>
         
         <h3 className="text-2xl font-display font-bold text-foreground mt-6 mb-3">

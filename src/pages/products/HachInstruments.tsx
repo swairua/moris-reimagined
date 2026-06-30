@@ -123,7 +123,7 @@ const HachInstruments = () => {
           About HACH Water Quality Solutions
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-4">
-          As an authorized distributor of HACH instruments in Kenya, Moris Enterprises supplies the full range of HACH water quality testing and analysis equipment. From advanced spectrophotometers and COD analyzers to portable meters and testing reagents, our HACH product line serves water utilities, laboratories, industrial facilities, and environmental monitoring organizations across the region.
+          As an authorized distributor of HACH instruments in Kenya, Moris Entreprises supplies the full range of HACH water quality testing and analysis equipment. From advanced spectrophotometers and COD analyzers to portable meters and testing reagents, our HACH product line serves water utilities, laboratories, industrial facilities, and environmental monitoring organizations across the region.
         </p>
 
         <h3 className="text-2xl font-display font-bold text-foreground mt-6 mb-3">
