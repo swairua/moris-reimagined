@@ -73,7 +73,14 @@ export const Footer = () => {
               <li>Laboratory Chemicals</li>
               <li>Medical Equipment</li>
               <li>Biotechnology</li>
-              <li>Water Testing</li>
+              <li>
+                <a
+                  href="/palintest"
+                  className="text-background/80 hover:text-background transition-colors"
+                >
+                  Palintest Water Testing
+                </a>
+              </li>
               <li>Quality Control</li>
             </ul>
           </div>

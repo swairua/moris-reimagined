@@ -2,6 +2,24 @@
 <IfModule mod_rewrite.c>
   RewriteEngine On
 
+  # 301 redirect old /products/ URLs to flat top-level URLs (SEO preservation)
+  RewriteRule ^products/(.+)$ /$1 [R=301,L,QSA]
+
+  # 301 redirect old dashed category URLs to new single-word URLs
+  RewriteRule ^medical-equipment$ /medical [R=301,L,QSA]
+  RewriteRule ^microbiology-biotechnology$ /microbiology [R=301,L,QSA]
+  RewriteRule ^laboratory-chemicals$ /chemicals [R=301,L,QSA]
+  RewriteRule ^water-analysis$ /water [R=301,L,QSA]
+  RewriteRule ^laboratory-testing$ /testing [R=301,L,QSA]
+  RewriteRule ^safety-products$ /safety [R=301,L,QSA]
+  RewriteRule ^waste-water-filtration$ /wastewater [R=301,L,QSA]
+  RewriteRule ^lab-equipment$ /labequipment [R=301,L,QSA]
+  RewriteRule ^automobile-supplies$ /automobile [R=301,L,QSA]
+  RewriteRule ^chromatography-consumables$ /chromatography [R=301,L,QSA]
+  RewriteRule ^equipment-quality-control$ /qualitycontrol [R=301,L,QSA]
+  RewriteRule ^hach-instruments$ /hach [R=301,L,QSA]
+  RewriteRule ^laboratory-material-testing$ /materialtesting [R=301,L,QSA]
+
   # Allow direct access to existing files and directories
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d

@@ -19,98 +19,98 @@ function slugify(text) {
 }
 
 const categoryRouteMap = {
-  "medical-equipment": {
-    path: "/products/medical-equipment",
+  "medical": {
+    path: "/medical",
     title: "Medical Equipment | Professional Healthcare Solutions Kenya",
     description: "High-quality medical instruments and equipment from Moris Enterprises for healthcare facilities in Kenya.",
     keywords: "medical equipment, healthcare instruments, medical devices, Kenya supplier",
   },
-  "microbiology-biotechnology": {
-    path: "/products/microbiology-biotechnology",
+  "microbiology": {
+    path: "/microbiology",
     title: "Microbiology & Biotechnology Culture Media | Laboratory Agar & Broths Kenya",
     description: "Comprehensive microbiology supplies including 100+ culture media, agars, broths, and fermentation media. Wagtech microbiological testing kits.",
     keywords: "culture media, agar, microbiology supplies, laboratory media, fermentation media, Kenya",
   },
   "glassware": {
-    path: "/products/glassware",
+    path: "/glassware",
     title: "Laboratory Glassware | Borosilicate Glass Beakers & Equipment Kenya",
     description: "Premium borosilicate laboratory glassware including beakers, flasks, pipettes, and test tubes for reliable lab operations.",
     keywords: "laboratory glassware, borosilicate glass, beakers, flasks, pipettes, test tubes, Kenya",
   },
-  "laboratory-chemicals": {
-    path: "/products/laboratory-chemicals",
+  "chemicals": {
+    path: "/chemicals",
     title: "Laboratory Chemicals | Quality Reagents & Supplies Kenya Supplier",
     description: "Premium laboratory chemicals and reagents for research and testing. Professional-grade chemical supplies from Moris Enterprises.",
     keywords: "laboratory chemicals, reagents, chemical supplies, lab reagents Kenya",
   },
-  "water-analysis": {
-    path: "/products/water-analysis",
+  "water": {
+    path: "/water",
     title: "Water Testing Equipment & Palintest | Water Quality Analysis Kenya",
     description: "Official distributor of Palintest water analysis equipment, HACH instruments, and comprehensive water testing solutions.",
     keywords: "water testing, Palintest, HACH, water quality equipment, water analysis, photometer, Kenya",
   },
-  "laboratory-testing": {
-    path: "/products/laboratory-testing",
+  "testing": {
+    path: "/testing",
     title: "Material & Laboratory Testing Equipment | Quality Control Solutions Kenya",
     description: "Advanced laboratory and material testing equipment for beverage, packaging, and quality testing in Kenya.",
     keywords: "laboratory testing, material testing, quality control, testing equipment, QA/QC, Kenya",
   },
-  "safety-products": {
-    path: "/products/safety-products",
+  "safety": {
+    path: "/safety",
     title: "Personal Protection Equipment (PPE) | Safety Products Kenya",
     description: "ISO certified personal protection equipment and safety products for laboratories and industries.",
     keywords: "PPE, personal protective equipment, safety products, protective gear, ISO certified, Kenya",
   },
-  "waste-water-filtration": {
-    path: "/products/waste-water-filtration",
+  "wastewater": {
+    path: "/wastewater",
     title: "Wastewater & Pool Filtration Systems | Water Treatment Solutions Kenya",
     description: "Professional wastewater filtration, pool filtration, and water treatment systems for industrial and residential applications.",
     keywords: "wastewater filtration, pool filtration, water treatment, filtration systems, water quality, Kenya",
   },
-  "palintest-kits": {
-    path: "/products/palintest-kits",
-    title: "Palintest Water Testing Kits & Photometers | Water Quality Analysis Kenya",
-    description: "Official distributor of Palintest water testing kits and photometers for rapid water quality analysis.",
-    keywords: "Palintest, water testing kits, photometers, water quality, water analysis, Kenya",
+  "palintest": {
+    path: "/palintest",
+    title: "Palintest Water Testing Equipment & Photometers | Official Distributor Kenya",
+    description: "Official distributor of Palintest water testing equipment in Kenya. 300+ SKUs including Lumiso photometers, Kemio analyzers, 40+ tablet tests, COD tube tests, Wagtech microbiological kits, Delagua kits & more. Authorized Palintest UK partner with full technical support. Buy Palintest in Kenya with fast delivery.",
+    keywords: "Palintest, Palintest Kenya, Palintest distributor, Palintest water testing, Palintest photometer, buy Palintest Kenya, Palintest price Kenya, Palintest distributor Nairobi, Lumiso, Kemio, Wagtech, Palintest tablet tests, Palintest tube tests, COD testing, Delagua, water testing equipment, water quality analysis, official Palintest distributor, Nairobi, Palintest reagents, DPD tablets, water analysis Kenya",
   },
-  "lab-equipment": {
-    path: "/products/lab-equipment",
+  "labequipment": {
+    path: "/labequipment",
     title: "Laboratory Equipment & Filtration Systems | Industrial Water Treatment Kenya",
     description: "Advanced laboratory equipment including water filtration systems, deionized water systems, UV sterilizers, and water quality meters.",
     keywords: "laboratory equipment, water filtration, deionized water, UV sterilizers, water quality, Kenya",
   },
-  "automobile-supplies": {
-    path: "/products/automobile-supplies",
+  "automobile": {
+    path: "/automobile",
     title: "KOMU Coils Springs & Suspension Components | Professional Auto Parts Kenya",
     description: "Premium KOMU Coils Springs and suspension components for automotive service centers. Professional-grade coil springs, shock absorbers, and suspension parts in Kenya.",
     keywords: "KOMU Coils Springs, KOMU Coils, suspension coils, coil springs Kenya, auto parts Kenya, shock absorbers, automobile supplies",
   },
-  "chromatography-consumables": {
-    path: "/products/chromatography-consumables",
+  "chromatography": {
+    path: "/chromatography",
     title: "Chromatography & Analytical Consumables | Vials, Filters, SPE Columns Kenya",
     description: "Premium chromatography consumables including vials, syringe filters, SPE columns, and sample preparation products for GC, LC, and analytical testing.",
     keywords: "chromatography consumables, vials, syringe filters, SPE column, autosampler vials, analytical supplies, Kenya",
   },
-  "equipment-quality-control": {
-    path: "/products/equipment-quality-control",
+  "qualitycontrol": {
+    path: "/qualitycontrol",
     title: "Equipment & Quality Control Instruments | Thermometers, pH Meters, Refractometers Kenya",
     description: "Professional quality control equipment including digital thermometers, water quality meters, pH meters, ORP meters, and refractometers.",
     keywords: "thermometer, pH meter, ORP meter, TDS meter, water quality equipment, quality control instruments, Kenya",
   },
-  "hach-instruments": {
-    path: "/products/hach-instruments",
+  "hach": {
+    path: "/hach",
     title: "HACH Water Testing Instruments & Spectrophotometers | Authorized Distributor Kenya",
     description: "Authorized distributor of HACH water analysis instruments in Kenya including DR3900 spectrophotometers, COD analyzers, pocket colorimeters, HQ series meters, and water quality testing reagents.",
     keywords: "HACH, HACH instruments, water testing, spectrophotometer, COD analyzer, water quality instruments, DR3900, DR6000, turbidity meter, Kenya",
   },
   "filtration": {
-    path: "/products/filtration",
+    path: "/filtration",
     title: "Filtration Products & Materials | Syringe Filters, Membranes, SPE Columns Kenya",
     description: "Complete filtration solutions including syringe filters, membrane filters, filter papers, vacuum filtration systems, and SPE columns.",
     keywords: "filtration, syringe filters, membrane filters, filter papers, vacuum filtration, SPE columns, Kenya",
   },
-  "laboratory-material-testing": {
-    path: "/products/laboratory-material-testing",
+  "materialtesting": {
+    path: "/materialtesting",
     title: "Laboratory Material Testing Equipment | Analysis Instruments Kenya",
     description: "Comprehensive laboratory and material testing equipment including autoclaves, microscopes, analyzers, and centrifuges.",
     keywords: "laboratory equipment, testing instruments, material testing, autoclave, microscope, centrifuge, Kenya",
@@ -163,7 +163,7 @@ function buildRoutes(apiProducts) {
     for (const product of apiProducts) {
       const slug = slugify(product.name);
       const categoryKey = slugify(product.category || "uncategorized");
-      const routePath = `/products/${categoryKey}/${slug}`;
+      const routePath = `/${slug}`;
       routes.push({
         path: routePath,
         title: `${product.name} | Professional Supplies Kenya`,
@@ -188,7 +188,7 @@ function buildRoutes(apiProducts) {
     ];
     for (const p of fallbackProducts) {
       routes.push({
-        path: `/products/automobile-supplies/${p.id}`,
+        path: `/${p.id}`,
         title: p.title,
         description: p.description,
         keywords: p.keywords,

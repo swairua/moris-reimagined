@@ -25,12 +25,12 @@ const ProductDetail = () => {
     keywords: product?.keywords || "",
     image: product?.image || "",
     type: "product",
-    canonical: product ? `https://morisentreprises.com/products/automobile-supplies/${product.id}` : "https://morisentreprises.com",
+    canonical: product ? `https://morisentreprises.com/${product.id}` : "https://morisentreprises.com",
     breadcrumbs: product ? [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },
-      { name: "Automobile Supplies", url: "/products/automobile-supplies" },
-      { name: product.name, url: `/products/automobile-supplies/${product.id}` },
+      { name: "Automobile Supplies", url: "/automobile" },
+      { name: product.name, url: `/products/automobile/${product.id}` },
     ] : [],
   });
 
@@ -97,8 +97,8 @@ const ProductDetail = () => {
           items={[
             { name: "Home", url: "/" },
             { name: "Products", url: "/#services" },
-            { name: "Automobile Supplies", url: "/products/automobile-supplies" },
-            { name: product.name, url: `/products/automobile-supplies/${product.id}` },
+            { name: "Automobile Supplies", url: "/automobile" },
+            { name: product.name, url: `/products/automobile/${product.id}` },
           ]}
         />
 
@@ -240,7 +240,7 @@ const ProductDetail = () => {
               <p className="text-muted-foreground leading-relaxed mt-6">
                 For optimal suspension performance, consider pairing your coil springs with our{" "}
                 <button
-                  onClick={() => navigate("/products/automobile-supplies")}
+                  onClick={() => navigate("/automobile")}
                   className="text-primary hover:underline font-semibold"
                 >
                   professional-grade shock absorbers
@@ -281,7 +281,7 @@ const ProductDetail = () => {
               <p className="text-muted-foreground leading-relaxed mt-6">
                 For complete suspension system upgrades, pair these shock absorbers with our full range of{" "}
                 <button
-                  onClick={() => navigate("/products/automobile-supplies")}
+                  onClick={() => navigate("/automobile")}
                   className="text-primary hover:underline font-semibold"
                 >
                   KOMU coil springs
@@ -326,7 +326,7 @@ const ProductDetail = () => {
                           related_product_id: relatedProduct.id,
                           related_product_name: relatedProduct.name,
                         });
-                        navigate(`/products/automobile-supplies/${relatedProduct.id}`);
+                        navigate(`/products/automobile/${relatedProduct.id}`);
                       }}
                       variant="outline"
                       className="w-full"

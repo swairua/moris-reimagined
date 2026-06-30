@@ -15,7 +15,7 @@ const partners: Partner[] = [
   {
     name: "Palintest",
     description: "Leading global provider of water testing solutions, photometers, and reagents for accurate water quality analysis across pools, spas, drinking water, and environmental applications.",
-    url: "https://www.palintest.com/",
+    url: "https://morisentreprises.com/palintest",
     featured: true,
   },
 ];

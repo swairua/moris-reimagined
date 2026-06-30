@@ -17,6 +17,10 @@ export const About = () => {
               We supply a variety of consumables to manufacturing industries, Food Services, Beverage, Healthcare, Laboratory Reagents, Water-care, Mining, Cleaning as well as cosmetic chemicals. Our customer-centric philosophy puts each and every customer first and delivers what each client defines as value.
             </p>
 
+            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+              As the <strong>official authorized Palintest distributor in Kenya</strong>, we offer the complete range of Palintest water testing equipment including Lumiso photometers, Kemio analyzers, and 300+ water testing products. <a href="/palintest" className="text-primary hover:underline font-semibold">View our full Palintest range →</a>
+            </p>
+
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
               <Card className="p-6 text-center bg-accent border-border">
                 <Award className="h-8 w-8 text-primary mx-auto mb-3" aria-hidden="true" />

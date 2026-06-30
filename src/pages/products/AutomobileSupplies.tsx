@@ -20,11 +20,11 @@ const AutomobileSupplies = () => {
     description: "Premium KOMU Coils Springs and suspension components for automotive service centers. Professional-grade coil springs, shock absorbers, and suspension parts in Kenya. Get competitive quotations for high-quality auto suspension components.",
     keywords: "KOMU Coils Springs, KOMU Coils, KOMU, suspension coils, suspension springs, coils, car coils, coil springs, KOMU suspension components, coil springs Kenya, auto parts Kenya, shock absorbers, vehicle suspension, automobile supplies",
     type: "article",
-    canonical: "https://morisentreprises.com/products/automobile-supplies",
+    canonical: "https://morisentreprises.com/automobile",
     breadcrumbs: [
       { name: "Home", url: "/" },
       { name: "Products", url: "/#services" },
-      { name: "KOMU Coils Springs", url: "/products/automobile-supplies" },
+      { name: "KOMU Coils Springs", url: "/automobile" },
     ],
   });
 
@@ -75,7 +75,7 @@ const AutomobileSupplies = () => {
         </p>
         <div className="flex flex-col gap-2">
           <Button
-            onClick={() => navigate(`/products/automobile-supplies/${product.id}`)}
+            onClick={() => navigate(`/products/automobile/${product.id}`)}
             variant="outline"
             className="w-full"
           >
@@ -104,7 +104,7 @@ const AutomobileSupplies = () => {
         items={[
           { name: "Home", url: "/" },
           { name: "Products", url: "/#services" },
-          { name: "Automobile Supplies", url: "/products/automobile-supplies" },
+          { name: "Automobile Supplies", url: "/automobile" },
         ]}
       />
 
