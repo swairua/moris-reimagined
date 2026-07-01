@@ -27,6 +27,7 @@ import LaboratoryMaterialTesting from "./pages/products/LaboratoryMaterialTestin
 import ProductDetail from "./pages/products/ProductDetail";
 import AdminLogin from "./pages/AdminLogin";
 import AdminDashboard from "./pages/AdminDashboard";
+import Gallery from "./pages/Gallery";
 import { LeadsManager } from "@/components/admin/LeadsManager";
 import { CustomersManager } from "@/components/admin/CustomersManager";
 import { CampaignManager } from "@/components/admin/CampaignManager";
@@ -65,6 +66,7 @@ const AppRoutes = () => {
         <Route path="/laboratory-material-testing" element={<LaboratoryMaterialTesting />} />
         <Route path="/automobile-supplies" element={<AutomobileSupplies />} />
         <Route path="/automobile-supplies/:productId" element={<ProductDetail />} />
+        <Route path="/gallery" element={<Gallery />} />
 
         {/* Admin Routes */}
         <Route path="/admin/login" element={<AdminLogin />} />

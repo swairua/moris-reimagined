@@ -49,14 +49,13 @@ Build Process: `npm run build` (includes prerendering and sitemap generation)
 
 ### Total URLs in Sitemap
 - 1 homepage
-- 16 product category pages
-- 50+ automobile product detail pages
-- 1 gallery page
-- **Total: 68+ URLs**
+- 17 product category pages (includes /gallery)
+- 7 automobile product detail pages
+- **Total: 25 URLs**
 
 ## Included Product Categories
 
-### Product Categories (16 Main Routes)
+### Product Categories (17 Main Routes including Gallery)
 1. Medical Equipment
 2. Microbiology & Biotechnology
 3. Glassware
@@ -75,10 +74,9 @@ Build Process: `npm run build` (includes prerendering and sitemap generation)
 16. Gallery
 
 ### Dynamic Product Detail Pages
-- Automobile Supplies: 7 categories with 50+ products
+- Automobile Supplies: 7 product detail pages
   - KOMU Coils Springs (6 variants)
   - Automotive Shock Absorbers
-  - Related products and variants
 
 ## URL Structure
 

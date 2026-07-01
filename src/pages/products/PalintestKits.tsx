@@ -72,6 +72,7 @@ const PalintestKits = () => {
     title: "Palintest Water Testing | Official Kenya Distributor | Premium Water Analysis",
     description: "Official Palintest distributor in Kenya. Premium water testing kits, photometers, and analyzers for drinking water, pools, spas, and environmental testing. Expert technical support and training.",
     keywords: "Palintest, Palintest Kenya, water testing kits, photometers, Pooltest, Kemio analyzer, water quality analysis, water testing equipment, Kenya distributor",
+    image: "https://morisentreprises.com/assets/og-image.png",
     type: "product",
     canonical: "https://morisentreprises.com/palintest",
     breadcrumbs: [

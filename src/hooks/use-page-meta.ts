@@ -107,6 +107,8 @@ export const usePageMeta = ({
     updateOGTag("og:description", description);
     updateOGTag("og:type", type);
     updateOGTag("og:locale", ogLocale);
+    updateOGTag("og:site_name", "Moris Entreprises");
+    updateOGTag("og:url", canonical || `https://morisentreprises.com${window.location.pathname}`);
 
     if (image) {
       updateOGTag("og:image", image);
@@ -170,7 +172,7 @@ export const usePageMeta = ({
     }
 
     // Add article/product metadata schema
-    if (type === "article" && (publishedDate || author || modifiedDate)) {
+    if ((type === "article" || type === "product") && (publishedDate || author || modifiedDate || type === "product")) {
       const articleSchema = {
         "@context": "https://schema.org",
         "@type": type === "product" ? "Product" : "Article",

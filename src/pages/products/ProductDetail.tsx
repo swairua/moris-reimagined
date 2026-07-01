@@ -332,7 +332,7 @@ const ProductDetail = () => {
                           related_product_id: relatedProduct.id,
                           related_product_name: relatedProduct.name,
                         });
-                        navigate(`/products/automobile-supplies/${relatedProduct.id}`);
+                        navigate(`/automobile-supplies/${relatedProduct.id}`);
                       }}
                       variant="outline"
                       className="w-full"

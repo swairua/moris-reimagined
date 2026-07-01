@@ -48,14 +48,21 @@
       "name": "Medical Equipment",
       "short_name": "Medical",
       "description": "Browse medical equipment products",
-      "url": "/products/medical-equipment",
+      "url": "/medical-equipment",
       "icons": [{ "src": "/src/assets/logo.png", "sizes": "192x192", "type": "image/png" }]
     },
     {
       "name": "Laboratory Chemicals",
       "short_name": "Chemicals",
       "description": "Browse laboratory chemicals and reagents",
-      "url": "/products/laboratory-chemicals",
+      "url": "/laboratory-chemicals",
+      "icons": [{ "src": "/src/assets/logo.png", "sizes": "192x192", "type": "image/png" }]
+    },
+    {
+      "name": "Palintest",
+      "short_name": "Palintest",
+      "description": "Professional water testing kits",
+      "url": "/palintest",
       "icons": [{ "src": "/src/assets/logo.png", "sizes": "192x192", "type": "image/png" }]
     }
   ],

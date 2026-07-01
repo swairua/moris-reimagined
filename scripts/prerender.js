@@ -211,9 +211,7 @@ const routesToPrerender = [
 
 function generateSitemap() {
   const sitemap = [`<?xml version="1.0" encoding="UTF-8"?>`];
-  sitemap.push(`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">`);
-  sitemap.push(`  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"`);
-  sitemap.push(`>`);
+  sitemap.push(`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">`);
 
   // Get current date in ISO format (YYYY-MM-DD)
   const currentDate = new Date().toISOString().split('T')[0];
