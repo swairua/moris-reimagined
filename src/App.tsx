@@ -24,6 +24,16 @@ import EquipmentQualityControl from "./pages/products/EquipmentQualityControl";
 import Filtration from "./pages/products/Filtration";
 import LaboratoryMaterialTesting from "./pages/products/LaboratoryMaterialTesting";
 import HachInstruments from "./pages/products/HachInstruments";
+import Spectrophotometers from "./pages/products/Spectrophotometers";
+import PCRMachines from "./pages/products/PCRMachines";
+import Microscopes from "./pages/products/Microscopes";
+import Centrifuges from "./pages/products/Centrifuges";
+import Autoclaves from "./pages/products/Autoclaves";
+import Incubators from "./pages/products/Incubators";
+import AnalyticalBalances from "./pages/products/AnalyticalBalances";
+import PHMeters from "./pages/products/PHMeters";
+import ConductivityMeters from "./pages/products/ConductivityMeters";
+import Colorimeters from "./pages/products/Colorimeters";
 import ProductDetail from "./pages/products/ProductDetail";
 import Gallery from "./pages/Gallery";
 import AdminLogin from "./pages/AdminLogin";
@@ -67,6 +77,16 @@ const AppRoutes = () => {
         <Route path="/materialtesting" element={<LaboratoryMaterialTesting />} />
         <Route path="/automobile" element={<AutomobileSupplies />} />
         <Route path="/hach" element={<HachInstruments />} />
+        <Route path="/spectrophotometers" element={<Spectrophotometers />} />
+        <Route path="/pcr-machines" element={<PCRMachines />} />
+        <Route path="/microscopes" element={<Microscopes />} />
+        <Route path="/centrifuges" element={<Centrifuges />} />
+        <Route path="/autoclaves" element={<Autoclaves />} />
+        <Route path="/incubators" element={<Incubators />} />
+        <Route path="/analytical-balances" element={<AnalyticalBalances />} />
+        <Route path="/ph-meters" element={<PHMeters />} />
+        <Route path="/conductivity-meters" element={<ConductivityMeters />} />
+        <Route path="/colorimeters" element={<Colorimeters />} />
 
         <Route path="/gallery" element={<Gallery />} />
 

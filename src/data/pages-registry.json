@@ -10,7 +10,7 @@
     "templateType": "ProductCategory",
     "wave": 1,
     "priority": "high",
-    "status": "pending",
+    "status": "created",
     "relatedPages": ["labequipment", "water", "hanna-instruments", "hach"]
   },
   {
@@ -24,7 +24,7 @@
     "templateType": "ProductCategory",
     "wave": 1,
     "priority": "high",
-    "status": "pending",
+    "status": "created",
     "relatedPages": ["labequipment", "microbiology", "hanna-instruments"]
   },
   {
@@ -38,7 +38,7 @@
     "templateType": "ProductCategory",
     "wave": 1,
     "priority": "high",
-    "status": "pending",
+    "status": "created",
     "relatedPages": ["labequipment", "microbiology", "medical"]
   },
   {
@@ -52,7 +52,7 @@
     "templateType": "ProductCategory",
     "wave": 1,
     "priority": "high",
-    "status": "pending",
+    "status": "created",
     "relatedPages": ["labequipment", "medical", "microbiology"]
   },
   {
@@ -66,7 +66,7 @@
     "templateType": "ProductCategory",
     "wave": 1,
     "priority": "high",
-    "status": "pending",
+    "status": "created",
     "relatedPages": ["labequipment", "medical", "safety"]
   },
   {
@@ -80,7 +80,7 @@
     "templateType": "ProductCategory",
     "wave": 1,
     "priority": "high",
-    "status": "pending",
+    "status": "created",
     "relatedPages": ["labequipment", "microbiology", "medical"]
   },
   {
@@ -94,7 +94,7 @@
     "templateType": "ProductCategory",
     "wave": 1,
     "priority": "high",
-    "status": "pending",
+    "status": "created",
     "relatedPages": ["labequipment", "chemicals", "qualitycontrol"]
   },
   {
@@ -108,7 +108,7 @@
     "templateType": "ProductCategory",
     "wave": 1,
     "priority": "high",
-    "status": "pending",
+    "status": "created",
     "relatedPages": ["water", "labequipment", "hanna-instruments"]
   },
   {
@@ -122,7 +122,7 @@
     "templateType": "ProductCategory",
     "wave": 1,
     "priority": "high",
-    "status": "pending",
+    "status": "created",
     "relatedPages": ["water", "labequipment", "hanna-instruments"]
   },
   {
@@ -136,7 +136,7 @@
     "templateType": "ProductCategory",
     "wave": 1,
     "priority": "high",
-    "status": "pending",
+    "status": "created",
     "relatedPages": ["water", "labequipment", "qualitycontrol"]
   },
   {
